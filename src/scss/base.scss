@@ -1,0 +1,93 @@
+@font-face {
+	font-family: "Funnier";
+	src: url("../fonts/Funnier.ttf");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Hamburg Hand";
+	src: url("../fonts/HamburgHand-Regular.otf") format("opentype");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Hamburg Hand";
+	src: url("../fonts/HamburgHand-Bold.otf") format("opentype");
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: "Hamburg Hand";
+	src: url("../fonts/HamburgHand-Light.otf") format("opentype");
+	font-weight: 300;
+}
+
+// FUNCTIONS
+@function pow($base, $exponent) {
+	$result: 1;
+
+	@for $_ from 1 through $exponent {
+		$result: $result * $base;
+	}
+
+	@return $result;
+}
+
+// PRIMARY COLOR VARIABLES
+$color-magenta: #fd247b;
+$color-magenta-80: #ff80b3;
+$color-magenta-60: #ffbfd9;
+$color-magenta-outline: #dc2e74;
+
+$color-mauve: #663362;
+$color-mauve-80: #995c94;
+$color-mauve-60: #cda5ca;
+
+// SECONDARY COLOR VARIABLES
+$color-linen: #fff2ec;
+$color-sunshine: #fcd999;
+$color-blue: #6bddef;
+$color-pastel-green: #c8e5a1;
+$color-sky: #a9e5f1;
+
+// GRADIENT COLORS
+$background-gradient: linear-gradient(
+	to top right,
+	$color-blue,
+	$color-mauve-60,
+	$color-magenta-60
+); //?: $color-mauve-2 or #9774b5?
+$NFT-gradient: linear-gradient(to top right, $color-blue, $color-magenta-60, $color-sunshine);
+
+// FONT VARIABLES
+$font-display: "Funnier", sans-serif;
+$font-paragraph: "Hamburg Hand", sans-serif;
+
+$font-type-scale: 1.333;
+
+// FONT SIZES
+$font-size-default: 16px;
+$font-size-1: pow($font-type-scale, 1) * $font-size-default;
+$font-size-2: pow($font-type-scale, 2) * $font-size-default;
+$font-size-3: pow($font-type-scale, 3) * $font-size-default;
+$font-size-4: pow($font-type-scale, 4) * $font-size-default;
+$font-size-5: pow($font-type-scale, 5) * $font-size-default;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: $font-paragraph;
+	font-size: $font-size-default;
+	font-weight: 400;
+}

@@ -52,7 +52,7 @@ $color-sky: #a9e5f1;
 
 // GRADIENT COLORS
 $background-gradient: linear-gradient(
-	to top right,
+	23.9deg,
 	$color-blue,
 	$color-mauve-60,
 	$color-magenta-60
@@ -67,11 +67,11 @@ $font-type-scale: 1.333;
 
 // FONT SIZES
 $font-size-default: 16px;
-$font-size-1: pow($font-type-scale, 1) * $font-size-default;
-$font-size-2: pow($font-type-scale, 2) * $font-size-default;
-$font-size-3: pow($font-type-scale, 3) * $font-size-default;
-$font-size-4: pow($font-type-scale, 4) * $font-size-default;
-$font-size-5: pow($font-type-scale, 5) * $font-size-default;
+$font-size-1: pow($font-type-scale, 1) * $font-size-default; // 21.28px
+$font-size-2: pow($font-type-scale, 2) * $font-size-default; // 28.3px
+$font-size-3: pow($font-type-scale, 3) * $font-size-default; // 37.6px
+$font-size-4: pow($font-type-scale, 4) * $font-size-default; // 50.06px
+$font-size-5: pow($font-type-scale, 5) * $font-size-default; // 66.6px
 
 *,
 *::before,

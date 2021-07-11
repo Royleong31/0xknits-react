@@ -5,7 +5,7 @@ import "./Layout.scss";
 export default function Layout({ children }) {
 	return (
 		<main className="home-container">
-			<Navbar />
+			{/* <Navbar /> */}
 			{children}
 			<Footer />
 		</main>

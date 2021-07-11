@@ -1,0 +1,84 @@
+@import "base.scss";
+
+// ?: Default size: large
+// ?: Default style: primary
+
+$large-height: 8.8rem;
+$large-width: 48.6rem;
+
+$small-height: 6.4rem;
+$small-width: 19.4rem;
+
+$mobile-height: 10.2rem;
+$mobile-width: 28.4rem;
+
+button.btn {
+	height: $large-height;
+	width: $large-width;
+	border: 3px solid $color-magenta-outline;
+	border-radius: 4px;
+	outline: none;
+
+	background-color: $color-magenta;
+	color: white;
+	font-family: inherit;
+
+	position: relative;
+	cursor: pointer;
+	// z-index: 2;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0.5rem;
+		left: 0.5rem;
+		z-index: -1;
+
+		height: $large-height;
+		width: $large-width;
+		border: 3px solid $color-magenta-outline;
+		border-radius: 4px;
+		background: $background-gradient;
+
+		transition: 0.2s all;
+	}
+
+	&:hover::before {
+		top: 0;
+		left: 0;
+	}
+
+	&--small {
+		width: $small-width;
+		height: $small-height;
+
+		&::before {
+			height: $small-height;
+			width: $small-width;
+		}
+	}
+
+	&--mobile {
+		width: $mobile-width;
+		height: $mobile-height;
+
+		&::before {
+			height: $mobile-height;
+			width: $mobile-width;
+		}
+	}
+
+	&--secondary {
+		background-color: $color-mauve-80;
+		border: 3px solid $color-mauve;
+
+		&:before {
+			border: 3px solid $color-mauve;
+		}
+	}
+
+	&--tertiary {
+		background-color: white;
+		color: $color-magenta;
+	}
+}

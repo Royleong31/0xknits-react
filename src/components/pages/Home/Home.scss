@@ -1,2 +1,101 @@
-@import 'base.scss';
+@import "base.scss";
 
+section.landing {
+	background-color: $color-linen;
+	grid-column: full-start / full-end;
+	text-align: center;
+	position: relative;
+	z-index: 0;
+
+	.landing {
+		&__container {
+			display: grid;
+			grid-template-rows: min-content 1fr min-content 1fr;
+			grid-template-columns:
+				[full-start] minmax(6rem, 1fr) [center-start] repeat(
+					8,
+					[col-start] minmax(min-content, 15rem) [col-end]
+				)
+				[center-end] minmax(6rem, 1fr) [full-end];
+			height: 100%;
+		}
+
+		&__nav-logo {
+			transform: scale(0.85);
+			margin-right: auto;
+		}
+
+		&__nav-container,
+		&__main-logo,
+		&__main,
+		&__sub {
+			grid-column: center-start / center-end;
+		}
+
+		&__nav-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 3rem;
+		}
+
+		&__connect-btn {
+			margin-right: 2.5rem;
+		}
+
+		&__main {
+			line-height: 1.2;
+		}
+
+		&__main-logo {
+			align-self: end;
+			justify-self: center;
+			transform: scale(1.4);
+			margin-bottom: 5rem;
+		}
+
+		&__sub {
+			font-size: $font-size-3;
+			color: $color-magenta;
+			margin-top: 4.5rem;
+		}
+	}
+}
+
+section.knits {
+	background-color: $color-magenta-60;
+	grid-column: 1 / -1;
+	padding: 16rem 0;
+	text-align: center;
+
+	.knits {
+		&__container {
+			display: grid;
+			row-gap: 2rem;
+			grid-template-columns:
+				[full-start] minmax(6rem, 1fr) [center-start] repeat(
+					8,
+					[col-start] minmax(min-content, 15rem) [col-end]
+				)
+				[center-end] minmax(6rem, 1fr) [full-end];
+			height: 100%;
+		}
+
+		&__main,
+		&__cards-container {
+			grid-column: center-start / center-end;
+		}
+
+		&__sub {
+			grid-column: col-start 2 / col-end 7;
+		}
+
+		&__cards-container {
+			margin-top: 5rem;
+		}
+	}
+}
+
+section.knits--second {
+	background-color: $color-sunshine;
+}

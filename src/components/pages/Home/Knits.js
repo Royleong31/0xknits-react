@@ -1,8 +1,11 @@
 import KnitCard from "../../UI/KnitCard/KnitCard";
 
-import img1 from "../../../img/dany-front.png";
-import img2 from "../../../img/jon.png";
-import img3 from "../../../img/tyrion.png";
+import dany1 from "../../../img/dany-front.png";
+import dany2 from "../../../img/dany-left.png";
+import dany3 from "../../../img/dany-back.png";
+import dany4 from "../../../img/dany-right.png";
+import jon1 from "../../../img/jon.png";
+import tyrion1 from "../../../img/tyrion.png";
 
 const dummyKnitsArr = [
 	{
@@ -15,7 +18,10 @@ const dummyKnitsArr = [
 		weight: 100,
 		width: 5,
 		material: "Wool",
-		img: img1,
+		img1: dany1,
+		img2: dany2,
+		img3: dany3,
+		img4: dany4,
 	},
 	{
 		name: "0xTyrion",
@@ -27,7 +33,10 @@ const dummyKnitsArr = [
 		weight: 200,
 		width: 50,
 		material: "Wool",
-		img: img2,
+		img1: jon1,
+		img2: dany2,
+		img3: dany3,
+		img4: dany4,
 	},
 	{
 		name: "0xJon",
@@ -39,7 +48,10 @@ const dummyKnitsArr = [
 		weight: 300,
 		width: 100,
 		material: "Wool",
-		img: img3,
+		img1: tyrion1,
+		img2: dany2,
+		img3: dany3,
+		img4: dany4,
 	},
 ];
 

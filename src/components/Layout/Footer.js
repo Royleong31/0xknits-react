@@ -1,8 +1,13 @@
+import { useState } from "react";
+
 import Logo from "../../icons/Logo";
 import InstagramIcon from "../../icons/Buttons/Instagram";
 import TwitterIcon from "../../icons/Buttons/Twitter";
 
 export default function Footer() {
+	const [isTwitterHovered, setIsTwitterHovered] = useState(false);
+	const [isInstagramHovered, setIsInstagramHovered] = useState(false);
+
 	return (
 		<footer className="footer">
 			<div className="footer__container">
@@ -22,8 +27,22 @@ export default function Footer() {
 				</p>
 				<h4 className="footer__faq">FAQ</h4>
 				<div className="footer__icon-container">
-					<TwitterIcon className="footer__icon" />
-					<InstagramIcon className="footer__icon" />
+					<a href="https://twitter.com/0xknits?lang=en">
+						<TwitterIcon
+							hover={isTwitterHovered}
+							onMouseEnter={() => setIsTwitterHovered(true)}
+							onMouseLeave={() => setIsTwitterHovered(false)}
+							className="footer__icon"
+						/>
+					</a>
+					<a href="https://www.instagram.com/">
+						<InstagramIcon
+						hover={isInstagramHovered}
+							onMouseEnter={() => setIsInstagramHovered(true)}
+							onMouseLeave={() => setIsInstagramHovered(false)}
+							className="footer__icon"
+						/>
+					</a>
 				</div>
 			</div>
 		</footer>

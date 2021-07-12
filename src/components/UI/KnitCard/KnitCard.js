@@ -1,3 +1,5 @@
+import { useState, useRef } from "react";
+
 import styles from "./KnitCard.module.scss";
 import InfoIcon from "../../../icons/Buttons/Info";
 import CloseIcon from "../../../icons/Buttons/Close";
@@ -22,17 +24,65 @@ export default function KnitCard({
 	weight,
 	width,
 	material,
-	img,
+	img1,
+	img2,
+	img3,
+	img4,
 }) {
+	const [showBack, setShowBack] = useState(false);
+	const [isHovered, setIsHovered] = useState(false);
+	const [img, setImg] = useState(img1);
+	const imgContainerRef = useRef();
+
+	let cardClasses = `${styles["card"]} `;
+	if (showBack) cardClasses += styles["card--clicked"];
+
+	const mouseMoveHandler = event => {
+		const { clientX } = event;
+		const { left, right, width } = imgContainerRef.current.getBoundingClientRect();
+		const quarterWidth = width / 4; // TODO: Change to 8 if 8 images are used
+		const xRelativeToEle = clientX - left;
+		const quarterMouseIsIn = Math.floor(xRelativeToEle / quarterWidth) + 1;
+
+		switch (quarterMouseIsIn) {
+			case 1:
+				setImg(img1);
+				break;
+			case 2:
+				setImg(img2);
+				break;
+			case 3:
+				setImg(img3);
+				break;
+			case 4:
+				setImg(img4);
+				break;
+
+			default:
+				setImg(img1);
+				break;
+		}
+	};
+
 	return (
 		<div>
-			<div className={styles["card"]}>
+			<div
+				className={cardClasses}
+				onMouseEnter={() => setIsHovered(true)}
+				onMouseLeave={() => setIsHovered(false)}
+				onClick={() => setShowBack(val => !val)}
+			>
 				<div className={styles["card__front"]}>
-					<div className={styles["card__image-container"]}>
+					<div
+						onMouseMove={mouseMoveHandler}
+						onMouseLeave={() => setImg(img1)}
+						ref={imgContainerRef}
+						className={styles["card__image-container"]}
+					>
 						<img src={img} alt="Knit Image" className={styles["card__image"]} />
 					</div>
 
-					<InfoIcon width="35" className={styles["card__btn"]} hover={false} />
+					<InfoIcon width="35" className={styles["card__btn"]} hover={isHovered} />
 
 					<div className={styles["card__title"]}>
 						<h3 className={styles["card__name"]}>{name}</h3>
@@ -46,11 +96,10 @@ export default function KnitCard({
 						<p className={styles["card__USD"]}>${priceInEth * 2100} USD</p>
 					</div>
 				</div>
-
 				<div className={styles["card__back"]}>
 					<div className={styles["card__back-top"]}>
 						<h3 className={styles["card__name"]}>{name}</h3>
-						<CloseIcon width="35" className={styles["card__btn"]} />
+						<CloseIcon width="35" className={styles["card__btn"]} hover={isHovered} />
 
 						<div className={styles["card__info"]}>
 							<InitialIcon className={styles["card__info-icon"]} />

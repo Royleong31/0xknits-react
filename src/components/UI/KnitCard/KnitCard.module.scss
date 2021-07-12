@@ -7,6 +7,18 @@
 	height: 53rem;
 	perspective: 160rem;
 
+	&--clicked {
+		background-color: lightblue;
+
+		& .card__front {
+			transform: rotateY(-180deg);
+		}
+
+		& .card__back {
+			transform: rotateY(0);
+		}
+	}
+
 	&::before {
 		content: "";
 		position: absolute;
@@ -19,7 +31,7 @@
 		border: 3px solid $color-magenta-outline;
 		border-radius: 4px;
 		background: $background-gradient;
-		transition: 0.3s 0.8s all;
+		transition: 0.3s all;
 	}
 
 	&:hover::before {
@@ -57,7 +69,8 @@
 				place-content: center;
 				grid-column: 1 / -1;
 				grid-row: 1 / span 1;
-				padding: 2rem 0;
+				// padding: 2rem 0;
+				height: 32rem;
 			}
 
 			&__image {
@@ -198,13 +211,5 @@
 				}
 			}
 		}
-	}
-
-	&:hover &__front {
-		transform: rotateY(-180deg);
-	}
-
-	&:hover &__back {
-		transform: rotateY(0);
 	}
 }

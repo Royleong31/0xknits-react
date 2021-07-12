@@ -1,4 +1,4 @@
-export default function Twitter({ hover, className }) {
+export default function Twitter({ hover, className, onMouseEnter, onMouseLeave }) {
 	if (hover)
 		return (
 			<svg
@@ -8,6 +8,7 @@ export default function Twitter({ hover, className }) {
 				viewBox="0 0 40 40"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
+				onMouseLeave={onMouseLeave}
 			>
 				<path
 					d="M39 20C39 30.4934 30.4934 39 20 39C9.50659 39 1 30.4934 1 20C1 9.50659 9.50659 1 20 1C30.4934 1 39 9.50659 39 20Z"
@@ -30,6 +31,7 @@ export default function Twitter({ hover, className }) {
 			viewBox="0 0 40 40"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
+			onMouseEnter={onMouseEnter}
 		>
 			<path
 				d="M38.25 20C38.25 30.0792 30.0792 38.25 20 38.25C9.9208 38.25 1.75 30.0792 1.75 20C1.75 9.9208 9.9208 1.75 20 1.75C30.0792 1.75 38.25 9.9208 38.25 20Z"

@@ -1,5 +1,9 @@
 import KnitCard from "../../UI/KnitCard/KnitCard";
 
+import img1 from "../../../img/dany-front.png";
+import img2 from "../../../img/jon.png";
+import img3 from "../../../img/tyrion.png";
+
 const dummyKnitsArr = [
 	{
 		name: "0xDaenerys",
@@ -11,6 +15,7 @@ const dummyKnitsArr = [
 		weight: 100,
 		width: 5,
 		material: "Wool",
+		img: img1,
 	},
 	{
 		name: "0xTyrion",
@@ -22,6 +27,7 @@ const dummyKnitsArr = [
 		weight: 200,
 		width: 50,
 		material: "Wool",
+		img: img2,
 	},
 	{
 		name: "0xJon",
@@ -32,7 +38,8 @@ const dummyKnitsArr = [
 		height: 100,
 		weight: 300,
 		width: 100,
-		material: "Cotton",
+		material: "Wool",
+		img: img3,
 	},
 ];
 

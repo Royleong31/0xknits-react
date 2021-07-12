@@ -1,6 +1,13 @@
-export default function Flag() {
+export default function Flag({ className }) {
 	return (
-		<svg width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg
+			className={className}
+			width="104"
+			height="104"
+			viewBox="0 0 104 104"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
 			<circle cx="54" cy="54" r="48.5" fill="url(#paint0_linear)" stroke="#DC2E74" stroke-width="3" />
 			<circle cx="50" cy="50" r="48.5" fill="#FCD999" stroke="#DC2E74" stroke-width="3" />
 			<path

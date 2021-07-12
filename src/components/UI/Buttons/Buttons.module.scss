@@ -14,10 +14,11 @@ $mobile-width: 28.4rem;
 
 button.btn {
 	height: $large-height;
-	width: $large-width;
+	width: 100%;
 	border: 3px solid $color-magenta-outline;
 	border-radius: 4px;
 	outline: none;
+	font-size: $font-size-3;
 
 	background-color: $color-magenta;
 	color: white;
@@ -27,20 +28,22 @@ button.btn {
 	cursor: pointer;
 	// z-index: 2;
 
-	&:before {
+	&::before {
 		content: "";
 		position: absolute;
 		top: 0.5rem;
 		left: 0.5rem;
 		z-index: -1;
 
-		height: $large-height;
-		width: $large-width;
+		box-sizing: content-box;
+
+		height: 100%;
+		width: 100%;
 		border: 3px solid $color-magenta-outline;
 		border-radius: 4px;
 		background: $background-gradient;
 
-		transition: 0.2s all;
+		transition: 0.3s all;
 	}
 
 	&:hover::before {
@@ -51,10 +54,9 @@ button.btn {
 	&--small {
 		width: $small-width;
 		height: $small-height;
+		font-size: $font-size-1;
 
 		&::before {
-			height: $small-height;
-			width: $small-width;
 		}
 	}
 
@@ -62,10 +64,10 @@ button.btn {
 		width: $mobile-width;
 		height: $mobile-height;
 
-		&::before {
-			height: $mobile-height;
-			width: $mobile-width;
-		}
+		// &::before {
+		// 	height: $mobile-height;
+		// 	width: $mobile-width;
+		// }
 	}
 
 	&--secondary {

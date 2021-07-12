@@ -67,6 +67,8 @@ section.knits {
 	grid-column: 1 / -1;
 	padding: 16rem 0;
 	text-align: center;
+	position: relative;
+	z-index: 0;
 
 	.knits {
 		&__container {
@@ -84,10 +86,17 @@ section.knits {
 		&__main,
 		&__cards-container {
 			grid-column: center-start / center-end;
+
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+			gap: 5rem;
 		}
 
 		&__sub {
-			grid-column: col-start 2 / col-end 7;
+			grid-column: center-start / center-end;
+			font-size: $font-size-2;
+			color: $color-mauve;
+			line-height: 1.5;
 		}
 
 		&__cards-container {

@@ -1,2 +1,207 @@
-@import 'base.scss';
+@import "base.scss";
 
+.card {
+	position: relative;
+	cursor: pointer;
+	margin-bottom: 3rem;
+	height: 55rem;
+	perspective: 160rem;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0.8rem;
+		left: 0.8rem;
+		z-index: -1;
+
+		height: 100%;
+		width: 100%;
+		border: 3px solid $color-magenta-outline;
+		border-radius: 4px;
+		background: $background-gradient;
+		transition: 0.3s 0.8s all;
+	}
+
+	&:hover::before {
+		top: 0;
+		left: 0;
+	}
+
+	&__front,
+	&__back {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		backface-visibility: hidden;
+		transition: all 0.8s;
+		border-radius: 4px;
+		border: 4px solid $color-magenta-outline;
+		color: $color-magenta;
+	}
+
+	&__front {
+		background-color: white;
+
+		display: grid;
+		grid-template-rows: repeat(3, min-content); // ?: 34.4rem - 4px top and bottom border = 33.6rem
+		// grid-template-columns: minmax(min-content, max-content);
+		// display: none;
+		z-index: 1;
+	}
+
+	&__back {
+		background-color: white;
+		color: $color-mauve;
+		line-height: 1.5;
+		transform: rotateY(180deg);
+
+		// TODO: REMOVE!!
+		// z-index: 2;
+
+		display: grid;
+		// grid-template-rows: 1fr 1fr;
+
+		.card {
+			&__info-title {
+				font-size: $font-size-default;
+			}
+
+			&__info-desc {
+				font-size: $font-size-1;
+			}
+		}
+
+		&-top {
+			display: grid;
+			grid-template-rows: 8rem min-content;
+			grid-template-columns: repeat(3, 1fr);
+			// row-gap: 1rem;
+			padding-bottom: 1rem;
+
+			.card {
+				&__name {
+					grid-column: 1 / -1;
+					grid-row: 1 / span 1;
+					align-self: end;
+				}
+
+				&__info-icon {
+					transform: scale(0.6);
+				}
+			}
+		}
+
+		&-bottom {
+			padding-top: 1rem;
+			padding: 1rem;
+			background-color: $color-sunshine;
+
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(3, min-content);
+
+			.card {
+				&__attributes-title {
+					font-size: $font-size-3;
+					color: $color-magenta;
+					grid-column: 1 / -1;
+					margin-bottom: 1rem;
+				}
+
+				&__attribute {
+					display: grid;
+					grid-template-columns: min-content 1fr;
+					align-items: end;
+					justify-items: start;
+
+					&-icon {
+						grid-column: 1 / span 1;
+						grid-row: 1 / span 2;
+						align-self: center;
+					}
+
+					.card__info-title {
+						align-self: end;
+					}
+
+					.card__info-desc {
+						align-self: start;
+						line-height: 1;
+					}
+				}
+
+				&__attribute-icon {
+					transform: scale(0.8);
+				}
+			}
+		}
+	}
+
+	&:hover &__front {
+		transform: rotateY(-180deg);
+	}
+
+	&:hover &__back {
+		transform: rotateY(0);
+	}
+
+	&__image-container {
+		background-color: $color-mauve;
+		display: grid;
+		place-content: center;
+		grid-column: 1 / -1;
+		grid-row: 1 / span 1;
+		padding: 2rem 0;
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__btn {
+		grid-column: 1 / -1;
+		grid-row: 1 / span 1;
+		justify-self: end;
+		margin: 1rem;
+		transform: scale(0.85);
+	}
+
+	&__title {
+		grid-row: 2 / span 1;
+		padding: 1rem;
+		padding-top: 4rem;
+		border-top: 4px solid $color-magenta-outline;
+		border-bottom: 4px solid $color-magenta-outline;
+	}
+
+	&__name {
+	}
+
+	&__available {
+		font-size: $font-size-1;
+		margin-top: 1rem;
+	}
+
+	&__price {
+		grid-row: 3 / span 1;
+		padding: 2rem 0.5rem;
+
+		display: grid;
+		grid-template-columns: repeat(2, minmax(max-content, 1fr));
+		align-items: baseline;
+		justify-content: center;
+		column-gap: 1.6rem;
+	}
+
+	&__eth {
+		font-size: $font-size-3;
+	}
+
+	&__USD {
+		font-size: $font-size-1;
+		font-family: $font-paragraph;
+	}
+}

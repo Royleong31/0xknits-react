@@ -1,6 +1,6 @@
-export default function Pool() {
+export default function Pool({className}) {
 	return (
-		<svg width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg className={className} width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<circle cx="54" cy="54" r="48.5" fill="url(#paint0_linear)" stroke="#DC2E74" stroke-width="3" />
 			<circle cx="50" cy="50" r="48.5" fill="#FCD999" stroke="#DC2E74" stroke-width="3" />
 			<path d="M29.8076 57.7693V74.1154H67.3076V57.7693H29.8076Z" fill="white" />

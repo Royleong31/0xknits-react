@@ -1,6 +1,13 @@
-export default function Weight() {
+export default function Weight({className}) {
 	return (
-		<svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg
+			className={className}
+			width="84"
+			height="84"
+			viewBox="0 0 84 84"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
 			<circle cx="44" cy="44" r="38.5" fill="url(#paint0_linear)" stroke="#DC2E74" stroke-width="3" />
 			<circle cx="40" cy="40" r="38.5" fill="#FFBFD9" stroke="#DC2E74" stroke-width="3" />
 			<path

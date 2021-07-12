@@ -1,9 +1,11 @@
-export default function Close({ hover, className }) {
+export default function Close({ hover, className, width }) {
+	if (!width) width = "40";
+
 	if (hover)
 		return (
 			<svg
 				className={className}
-				width="40"
+				width={width}
 				height="40"
 				viewBox="0 0 40 40"
 				fill="none"
@@ -23,7 +25,7 @@ export default function Close({ hover, className }) {
 	return (
 		<svg
 			className={className}
-			width="40"
+			width={width}
 			height="40"
 			viewBox="0 0 40 40"
 			fill="none"

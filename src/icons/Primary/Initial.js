@@ -1,8 +1,10 @@
-export default function Flag({ className }) {
+export default function Flag({ className, width }) {
+	if (!width) width = "104";
+
 	return (
 		<svg
 			className={className}
-			width="104"
+			width={width}
 			height="104"
 			viewBox="0 0 104 104"
 			fill="none"

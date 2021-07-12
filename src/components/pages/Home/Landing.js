@@ -8,18 +8,18 @@ export default function Landing() {
 
 				<div className="landing__nav-container">
 					<div className="landing__nav-logo">
-						<Logo />
+						<Logo width={'163'} />
 					</div>
-					<Button small className="landing__connect-btn">
+					<Button navbar className="landing__connect-btn">
 						Connect Wallet
 					</Button>
-					<Button tertiary small className="landing__knits-btn">
+					<Button tertiary navbar className="landing__knits-btn">
 						0 Knits
 					</Button>
 				</div>
 
 				<div className="landing__main-logo">
-					<Logo />
+					<Logo width={'275'} />
 				</div>
 
 				<h1 className='landing__main'>Knits of Crypto Founders</h1>

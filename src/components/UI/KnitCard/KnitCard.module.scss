@@ -4,7 +4,7 @@
 	position: relative;
 	cursor: pointer;
 	margin-bottom: 3rem;
-	height: 55rem;
+	height: 53rem;
 	perspective: 160rem;
 
 	&::before {
@@ -49,6 +49,60 @@
 		// grid-template-columns: minmax(min-content, max-content);
 		// display: none;
 		z-index: 1;
+
+		.card {
+			&__image-container {
+				background-color: $color-mauve;
+				display: grid;
+				place-content: center;
+				grid-column: 1 / -1;
+				grid-row: 1 / span 1;
+				padding: 2rem 0;
+			}
+
+			&__image {
+				width: 100%;
+				height: 100%;
+			}
+
+			&__btn {
+				grid-column: 1 / -1;
+				grid-row: 1 / span 1;
+				justify-self: end;
+				margin: 1rem;
+			}
+
+			&__title {
+				grid-row: 2 / span 1;
+				padding: 2.4rem 1rem;
+				border-top: 4px solid $color-magenta-outline;
+				border-bottom: 4px solid $color-magenta-outline;
+			}
+
+			&__available {
+				font-size: $font-size-1;
+				margin-top: 1rem;
+			}
+
+			&__price {
+				grid-row: 3 / span 1;
+				padding: 2.3rem 0.5rem;
+
+				display: grid;
+				grid-template-columns: repeat(2, minmax(max-content, 1fr));
+				align-items: baseline;
+				justify-content: center;
+			}
+
+			&__eth {
+				font-size: $font-size-3;
+			}
+
+			&__USD {
+				font-size: $font-size-1;
+				font-family: $font-paragraph;
+			}
+		}
 	}
 
 	&__back {
@@ -87,8 +141,15 @@
 					align-self: end;
 				}
 
+				&__btn {
+					grid-column: 1 / -1;
+					grid-row: 1 / span 1;
+					justify-self: end;
+					margin: 1rem;
+				}
+
 				&__info-icon {
-					transform: scale(0.6);
+					transform: scale(0.8);
 				}
 			}
 		}
@@ -145,63 +206,5 @@
 
 	&:hover &__back {
 		transform: rotateY(0);
-	}
-
-	&__image-container {
-		background-color: $color-mauve;
-		display: grid;
-		place-content: center;
-		grid-column: 1 / -1;
-		grid-row: 1 / span 1;
-		padding: 2rem 0;
-	}
-
-	&__image {
-		width: 100%;
-		height: 100%;
-	}
-
-	&__btn {
-		grid-column: 1 / -1;
-		grid-row: 1 / span 1;
-		justify-self: end;
-		margin: 1rem;
-		transform: scale(0.85);
-	}
-
-	&__title {
-		grid-row: 2 / span 1;
-		padding: 1rem;
-		padding-top: 4rem;
-		border-top: 4px solid $color-magenta-outline;
-		border-bottom: 4px solid $color-magenta-outline;
-	}
-
-	&__name {
-	}
-
-	&__available {
-		font-size: $font-size-1;
-		margin-top: 1rem;
-	}
-
-	&__price {
-		grid-row: 3 / span 1;
-		padding: 2rem 0.5rem;
-
-		display: grid;
-		grid-template-columns: repeat(2, minmax(max-content, 1fr));
-		align-items: baseline;
-		justify-content: center;
-		column-gap: 1.6rem;
-	}
-
-	&__eth {
-		font-size: $font-size-3;
-	}
-
-	&__USD {
-		font-size: $font-size-1;
-		font-family: $font-paragraph;
 	}
 }

@@ -1,13 +1,15 @@
 import styles from "./KnitCard.module.scss";
 import InfoIcon from "../../../icons/Buttons/Info";
+import CloseIcon from "../../../icons/Buttons/Close";
+
 import InitialIcon from "../../../icons/Primary/Initial";
 import RedeemedIcon from "../../../icons/Primary/Redeemed";
 import PoolIcon from "../../../icons/Primary/Pool";
+
 import HeightIcon from "../../../icons/Secondary/Height";
 import WeightIcon from "../../../icons/Secondary/Weight";
 import WidthIcon from "../../../icons/Secondary/Width";
 import WoolIcon from "../../../icons/Secondary/Wool";
-import CloseIcon from "../../../icons/Buttons/Close";
 import Button from "../../UI/Buttons/Button";
 
 export default function KnitCard({
@@ -30,7 +32,7 @@ export default function KnitCard({
 						<img src={img} alt="Knit Image" className={styles["card__image"]} />
 					</div>
 
-					<InfoIcon className={styles["card__btn"]} hover={false} />
+					<InfoIcon width="35" className={styles["card__btn"]} hover={false} />
 
 					<div className={styles["card__title"]}>
 						<h3 className={styles["card__name"]}>{name}</h3>
@@ -48,7 +50,7 @@ export default function KnitCard({
 				<div className={styles["card__back"]}>
 					<div className={styles["card__back-top"]}>
 						<h3 className={styles["card__name"]}>{name}</h3>
-						<CloseIcon className={styles["card__btn"]} />
+						<CloseIcon width="35" className={styles["card__btn"]} />
 
 						<div className={styles["card__info"]}>
 							<InitialIcon className={styles["card__info-icon"]} />

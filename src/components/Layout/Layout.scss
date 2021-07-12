@@ -19,6 +19,7 @@ footer.footer {
 	background-color: $color-sky;
 	padding: 9.5rem 0;
 	grid-column: 1 / -1;
+	// font-size: 2rem;
 
 	display: grid;
 	grid-template-columns:
@@ -45,16 +46,19 @@ footer.footer {
 
 		&__about {
 			grid-column: col-start 3 / col-end 6;
+			font-size: 1.8rem;
 		}
 
 		&__content {
 			grid-column: col-start 3 / col-end 6;
+			line-height: 1.5;
 		}
 
 		&__faq {
 			grid-column: col-start 7 / col-end 7;
 			grid-row: 1 / span 1;
 			margin-left: 2rem;
+			font-size: 1.8rem;
 		}
 
 		&__icon-container {

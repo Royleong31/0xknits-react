@@ -1,8 +1,10 @@
-export default function Weight({className}) {
+export default function Weight({ className, width }) {
+	if (!width) width = "84";
+
 	return (
 		<svg
 			className={className}
-			width="84"
+			width={width}
 			height="84"
 			viewBox="0 0 84 84"
 			fill="none"

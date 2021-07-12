@@ -12,6 +12,9 @@ $small-width: 19.4rem;
 $mobile-height: 10.2rem;
 $mobile-width: 28.4rem;
 
+$navbar-width: 22.3125rem; // ?: For laptop size, 14/16 of the actual design
+$navbar-height: 5.6rem;
+
 button.btn {
 	height: $large-height;
 	width: 100%;
@@ -55,19 +58,17 @@ button.btn {
 		width: $small-width;
 		height: $small-height;
 		font-size: $font-size-1;
+	}
 
-		&::before {
-		}
+	&--navbar {
+		width: $navbar-width;
+		height: $navbar-height;
+		font-size: $font-size-1;
 	}
 
 	&--mobile {
 		width: $mobile-width;
 		height: $mobile-height;
-
-		// &::before {
-		// 	height: $mobile-height;
-		// 	width: $mobile-width;
-		// }
 	}
 
 	&--secondary {

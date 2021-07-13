@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
+import "./Layout.scss";
 import Logo from "../../icons/Logo";
 import InstagramIcon from "../../icons/Buttons/Instagram";
 import TwitterIcon from "../../icons/Buttons/Twitter";
@@ -12,7 +14,7 @@ export default function Footer() {
 		<footer className="footer">
 			<div className="footer__container">
 				<Logo className="footer__logo" />
-				<h4 className="footer__about">About this project</h4>
+				<h4 className="footer__heading">About this project</h4>
 				<p className="footer__content">
 					A collaborative project between HedgedHog and Bernie. One individual completely immersed
 					in the 0x world and another individual just interested in knitting. Intricate Washlet
@@ -25,7 +27,11 @@ export default function Footer() {
 					carefully curated boulevard quality of life. Artisanal Toto St Moritz, Swiss tote bag
 					K-pop exquisite iconic Singapore.
 				</p>
-				<h4 className="footer__faq">FAQ</h4>
+
+				<Link className="footer__faq" to="/faq">
+					<h4 className="footer__heading">FAQ</h4>
+				</Link>
+
 				<div className="footer__icon-container">
 					<a href="https://twitter.com/0xknits?lang=en">
 						<TwitterIcon
@@ -37,7 +43,7 @@ export default function Footer() {
 					</a>
 					<a href="https://www.instagram.com/">
 						<InstagramIcon
-						hover={isInstagramHovered}
+							hover={isInstagramHovered}
 							onMouseEnter={() => setIsInstagramHovered(true)}
 							onMouseLeave={() => setIsInstagramHovered(false)}
 							className="footer__icon"

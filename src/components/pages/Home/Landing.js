@@ -5,10 +5,9 @@ export default function Landing() {
 	return (
 		<section className="landing">
 			<div className="landing__container">
-
 				<div className="landing__nav-container">
 					<div className="landing__nav-logo">
-						<Logo width={'163'} />
+						<Logo className="landing__nav-logo" />
 					</div>
 					<Button navbar className="landing__connect-btn">
 						Connect Wallet
@@ -19,10 +18,10 @@ export default function Landing() {
 				</div>
 
 				<div className="landing__main-logo">
-					<Logo width={'275'} />
+					<Logo width={"275"} />
 				</div>
 
-				<h1 className='landing__main'>Knits of Crypto Founders</h1>
+				<h1 className="landing__main">Knits of Crypto Founders</h1>
 				<p className="landing__sub">Trade handmade, limited edition dolls</p>
 			</div>
 		</section>

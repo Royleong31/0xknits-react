@@ -2,12 +2,20 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "./Layout.scss";
 
-export default function Layout({ children }) {
+export default function Layout({ navbar, footer, page, children }) {
+	let mainClasses = ["container"];
+
+	if (page === "home") {
+		mainClasses.push("container--home");
+	} else if (page === "faq") {
+		mainClasses.push("container--faq");
+	}
+
 	return (
-		<main className="home-container">
-			{/* <Navbar /> */}
+		<main className={mainClasses.join(" ")}>
+			{navbar && <Navbar />}
 			{children}
-			<Footer />
+			{footer && <Footer />}
 		</main>
 	);
 }

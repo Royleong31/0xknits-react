@@ -1,6 +1,6 @@
-export default function TrustWallet() {
+export default function TrustWallet({className}) {
 	return (
-		<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg className={className} width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<circle cx="27.9998" cy="28.0001" r="27.0345" fill="#C4C4C4" />
 			<circle cx="27.9998" cy="28.0001" r="27.0345" fill="white" />
 			<path

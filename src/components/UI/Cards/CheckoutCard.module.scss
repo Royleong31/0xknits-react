@@ -1,0 +1,132 @@
+@import "base.scss";
+
+.card {
+	border: 4px solid $color-magenta-outline;
+
+	border-radius: 4px;
+	background-color: white;
+	width: 36.7rem;
+	color: $color-magenta;
+	position: relative;
+	z-index: 2;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem;
+
+
+	}
+
+	&__btn {
+		cursor: pointer;
+	}
+
+	&__image-container {
+		background-color: $color-mauve;
+		display: grid;
+		place-content: center;
+		border-top: 4px solid $color-magenta-outline;
+		border-bottom: 4px solid $color-magenta-outline;
+		height: 32rem;
+	}
+
+	&__title {
+		padding: 2.4rem 1rem;
+		border-bottom: 4px solid $color-magenta-outline;
+		text-align: center;
+	}
+
+	&__available {
+		font-size: $font-size-1;
+		margin-top: 1.5rem;
+	}
+
+	&__price {
+		padding: 2rem;
+		display: grid;
+		gap: 1rem 2rem;
+		grid-template-columns: 1fr 2fr;
+		grid-template-rows: min-content 1fr;
+		height: 11rem;
+	}
+
+	&__detail {
+		font-size: $font-size-default;
+	}
+}
+
+.menu {
+	&__default {
+		border: 4px solid $color-magenta-outline;
+		border-radius: 4px;
+		display: grid;
+		grid-auto-flow: column;
+		align-items: center;
+		justify-content: space-between;
+		cursor: pointer;
+
+		&:hover .menu__chevron {
+			background-color: $color-magenta;
+		}
+	}
+
+	&__default-option {
+		display: grid;
+		place-content: center;
+		height: 4rem;
+		padding-left: 1rem;
+		font-size: $font-size-1;
+	}
+
+	&__chevron {
+		border-left: 4px solid $color-magenta-outline;
+		height: 100%;
+		background-color: white;
+	}
+
+	&__options {
+		color: $color-magenta;
+		background-color: white;
+		border-radius: 0 0 4px 4px;
+
+		overflow: hidden;
+		max-height: 0;
+
+		transition: max-height 0.3s;
+	}
+
+	&__option {
+		display: grid;
+		align-items: center;
+		height: 4rem;
+		padding-left: 1rem;
+		font-size: $font-size-1;
+		border: 4px solid $color-magenta-outline;
+		border-top: none;
+
+		cursor: pointer;
+
+		&:hover {
+			background-color: $color-magenta;
+			color: white;
+		}
+	}
+}
+
+.menu.active {
+	.menu {
+		&__default {
+			border-radius: 4px 4px 0 0;
+		}
+
+		&__options {
+			max-height: 20rem;
+		}
+
+		&__option:first-child {
+			border-radius: 0;
+		}
+	}
+}

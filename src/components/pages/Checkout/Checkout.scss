@@ -1,0 +1,19 @@
+@import "base.scss";
+
+section.checkout {
+	// TODO: Change this to viewport height if screen is tall enough, otherwise put padding
+	height: 100rem;
+	width: 100%;
+	background-color: $color-sky;
+	display: grid;
+	place-content: center;
+
+	position: relative;
+	z-index: 0;
+
+	.checkout {
+		&__btn {
+			margin-top: 3rem;
+		}
+	}
+}

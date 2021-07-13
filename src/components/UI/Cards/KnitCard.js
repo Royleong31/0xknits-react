@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { useHistory } from "react-router-dom";
 
 import styles from "./KnitCard.module.scss";
 import InfoIcon from "../../../icons/Buttons/Info";
@@ -12,7 +13,7 @@ import HeightIcon from "../../../icons/Secondary/Height";
 import WeightIcon from "../../../icons/Secondary/Weight";
 import WidthIcon from "../../../icons/Secondary/Width";
 import WoolIcon from "../../../icons/Secondary/Wool";
-import Button from "../../UI/Buttons/Button";
+import Button from "../Buttons/Button";
 
 export default function KnitCard({
 	name,
@@ -33,9 +34,14 @@ export default function KnitCard({
 	const [isHovered, setIsHovered] = useState(false);
 	const [img, setImg] = useState(img1);
 	const imgContainerRef = useRef();
+	const history = useHistory();
 
 	let cardClasses = `${styles["card"]} `;
 	if (showBack) cardClasses += styles["card--clicked"];
+
+	const buyHandler = () => {
+		history.push("/checkout");
+	};
 
 	const mouseMoveHandler = event => {
 		const { clientX } = event;
@@ -148,7 +154,7 @@ export default function KnitCard({
 				</div>
 			</div>
 
-			<Button>Buy</Button>
+			<Button onClick={buyHandler}>Buy</Button>
 		</div>
 	);
 }

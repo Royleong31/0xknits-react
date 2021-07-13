@@ -1,0 +1,106 @@
+@import "base.scss";
+
+.modalAnimation-enter {
+	opacity: 0;
+
+	aside.modal {
+		transform: scale(0);
+	}
+}
+
+.modalAnimation-enter-active {
+	transition: all 0.3s;
+	opacity: 1;
+
+	aside.modal {
+		transform: scale(1);
+		transition: all 0.3s 0.2s;
+	}
+}
+
+.modalAnimation-exit {
+	opacity: 1;
+
+	aside.modal {
+		transform: scale(1);
+	}
+}
+
+.modalAnimation-exit-active {
+	opacity: 0;
+	transition: all 0.3s 0.2s;
+
+	aside.modal {
+		transform: scale(0);
+		transition: all 0.3s;
+	}
+}
+
+.modal--overlay {
+	background-color: rgba(black, 0.8);
+	// backdrop-filter: blur(10px); // TODO: To use a blur filter or not?
+	width: 100vw;
+	height: 100vh;
+	z-index: 15;
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	display: grid;
+	place-content: center;
+}
+
+aside.modal {
+	border: 4px solid $color-magenta-outline;
+	width: 50rem;
+	// height: 36.7rem;
+	border-radius: 4px;
+	background-color: white;
+	position: relative;
+	z-index: 0;
+	display: grid;
+	transition: all 0.3s;
+
+	// row-gap: 2rem;
+
+	.modal {
+		&__header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 2rem;
+			width: 100%;
+			border-bottom: 4px solid $color-magenta;
+			margin-bottom: 3rem;
+
+			&-text {
+				font-family: $font-display;
+				color: $color-magenta;
+				font-size: $font-size-2;
+			}
+		}
+
+		&__close-icon {
+			transform: scale(0.85);
+			cursor: pointer;
+		}
+
+		&__btn {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1rem;
+			margin-bottom: 3rem;
+			justify-self: center;
+			width: 90%;
+
+			&-text {
+				font-size: $font-size-3;
+			}
+		}
+
+		&__payment-icon {
+			transform: scale(0.85);
+		}
+	}
+}

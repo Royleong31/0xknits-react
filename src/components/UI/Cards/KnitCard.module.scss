@@ -57,7 +57,7 @@
 		background-color: white;
 
 		display: grid;
-		grid-template-rows: repeat(3, min-content); // ?: 34.4rem - 4px top and bottom border = 33.6rem
+		grid-template-rows: repeat(2, min-content); // ?: 34.4rem - 4px top and bottom border = 33.6rem
 		// grid-template-columns: minmax(min-content, max-content);
 		// display: none;
 		z-index: 1;
@@ -69,7 +69,6 @@
 				place-content: center;
 				grid-column: 1 / -1;
 				grid-row: 1 / span 1;
-				// padding: 2rem 0;
 				height: 32rem;
 			}
 
@@ -94,17 +93,17 @@
 
 			&__available {
 				font-size: $font-size-1;
-				margin-top: 1rem;
+				margin-top: 1.5rem;
 			}
 
 			&__price {
 				grid-row: 3 / span 1;
-				padding: 2.3rem 0.5rem;
 
 				display: grid;
 				grid-template-columns: repeat(2, minmax(max-content, 1fr));
 				align-items: baseline;
-				justify-content: center;
+				place-content: center;
+				
 			}
 
 			&__eth {

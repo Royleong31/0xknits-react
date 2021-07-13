@@ -1,6 +1,6 @@
 import styles from "./Buttons.module.scss";
 
-export default function PrimaryBtn({ children, className, small, mobile, navbar, secondary, tertiary }) {
+export default function PrimaryBtn({ children, className, small, mobile, navbar, secondary, tertiary, onClick }) {
 	const classesArr = [styles["btn"]];
 
 	// ?: large is the default size
@@ -14,5 +14,5 @@ export default function PrimaryBtn({ children, className, small, mobile, navbar,
 
 	const classes = classesArr.join(" ") + " " + className;
 
-	return <button className={classes}>{children}</button>;
+	return <button onClick={onClick} className={classes}>{children}</button>;
 }

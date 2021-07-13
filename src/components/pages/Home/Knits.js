@@ -1,4 +1,4 @@
-import KnitCard from "../../UI/KnitCard/KnitCard";
+import KnitCard from "../../UI/Cards/KnitCard";
 
 import dany1 from "../../../img/dany-front.png";
 import dany2 from "../../../img/dany-left.png";

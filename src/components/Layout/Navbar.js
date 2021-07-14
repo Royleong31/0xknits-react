@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import Logo from "../../icons/Logo";
 import Button from "../UI/Buttons/Button";
@@ -6,6 +7,8 @@ import Button from "../UI/Buttons/Button";
 import "./Layout.scss";
 
 export default function Navbar() {
+	const history = useHistory();
+
 	return (
 		<nav className="navbar">
 			<div className="navbar__container">
@@ -17,7 +20,7 @@ export default function Navbar() {
 					Connect Wallet
 				</Button>
 
-				<Button tertiary navbar className="navbar__knits-btn">
+				<Button tertiary navbar className="navbar__knits-btn" onClick={() => history.push("/orders")}>
 					0 Knits
 				</Button>
 			</div>

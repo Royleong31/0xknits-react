@@ -1,11 +1,9 @@
-export default function Info({ hover, className, width }) {
-	if (!width) width = "40";
+export default function Info({ hover, className }) {
 
 	if (hover)
 		return (
 			<svg
 				className={className}
-				width={width}
 				height="40"
 				viewBox="0 0 40 40"
 				fill="none"
@@ -26,7 +24,6 @@ export default function Info({ hover, className, width }) {
 	return (
 		<svg
 			className={className}
-			width={width}
 			height="40"
 			viewBox="0 0 40 40"
 			fill="none"

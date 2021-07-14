@@ -1,0 +1,107 @@
+@import "base.scss";
+
+.card {
+	border: 4px solid $color-magenta-outline;
+	border-radius: 4px;
+	grid-column: col-start 1 / col-end 6;
+	height: 286px;
+
+	display: grid;
+	grid-template-columns: 278px 1fr; // ?: 286px - 2*4px border
+
+	&__img {
+		transform: scale(0.8);
+	}
+
+	&__img-border {
+		display: grid;
+		place-content: center;
+		height: 248px; // ?: 286px of card - 2*15px of img-container border
+		width: 248px;
+	}
+
+	&__img-container {
+		background-color: $color-mauve-80;
+		border: 15px solid transparent;
+
+		&--NFT {
+			border-image: $NFT-gradient;
+			border-image-slice: 1;
+
+			.card__img-border {
+				border: 3px solid $color-magenta-outline;
+			}
+		}
+	}
+
+	&__details {
+		background-color: #fffbfa;
+		padding: 3rem;
+		border-left: 4px solid $color-magenta-outline;
+
+		position: relative;
+		z-index: 0;
+
+		display: grid;
+		grid-template-columns: 1fr 25rem;
+	}
+
+	&__details-left {
+		color: $color-mauve;
+		line-height: 1.5;
+		font-size: $font-size-default;
+
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(4, min-content);
+		row-gap: 1.5rem;
+
+		h3 {
+			grid-column: 1 / -1;
+		}
+
+		.card {
+			&__name {
+				margin-bottom: 1rem;
+			}
+
+			&__detail {
+				grid-column: 1 / span 1;
+			}
+
+			&__status {
+				grid-row: 2 / span 1;
+				grid-column: 2 / span 1;
+
+				h6 {
+					font-size: inherit;
+				}
+			}
+
+			&__tracking-num {
+				grid-row: 3 / span 1;
+				grid-column: 2 / span 1;
+			}
+
+			&__track-order {
+				color: $color-magenta;
+				grid-row: 4 / span 1;
+				grid-column: 2 / span 1;
+			}
+		}
+	}
+
+	&__details-right {
+		display: flex;
+		flex-direction: column;
+
+		.card {
+			&__order-btn {
+				margin-bottom: 2.4rem;
+			}
+
+			&__item-btn {
+			}
+		}
+	}
+}

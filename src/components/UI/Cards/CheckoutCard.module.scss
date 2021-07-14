@@ -6,6 +6,7 @@
 	border-radius: 4px;
 	background-color: white;
 	width: 48.5rem;
+	// height: 71.7rem;
 	color: $color-magenta;
 	position: relative;
 	z-index: 2;
@@ -52,6 +53,7 @@
 		gap: 1rem 2rem;
 		grid-template-columns: 1fr 2fr;
 		grid-template-rows: min-content 1fr;
+		height: 11.5rem;
 	}
 
 	&__detail {

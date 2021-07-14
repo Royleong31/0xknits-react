@@ -110,7 +110,7 @@ $laptop-grid-columns: [full-start] minmax(6rem, 1fr) [center-start]
 	repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 
 *,
-*::before,	
+*::before,
 *::after {
 	margin: 0;
 	padding: 0;
@@ -130,4 +130,5 @@ body {
 	font-family: $font-paragraph;
 	font-size: $font-size-default;
 	font-weight: 400;
+	color: $color-magenta;
 }

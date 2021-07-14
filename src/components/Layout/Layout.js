@@ -7,7 +7,7 @@ export default function Layout({ navbar, footer, page, children }) {
 
 	if (page === "home") {
 		mainClasses.push("container--home");
-	} else if (page === "faq") {
+	} else if (page === "faq" || page === "orders") {
 		mainClasses.push("container--faq");
 	}
 

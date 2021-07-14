@@ -1,7 +1,11 @@
+import { useHistory } from "react-router-dom";
+
 import Button from "../../UI/Buttons/Button";
 import Logo from "../../../icons/Logo";
 
 export default function Landing() {
+	const history = useHistory();
+
 	return (
 		<section className="landing">
 			<div className="landing__container">
@@ -13,7 +17,12 @@ export default function Landing() {
 					<Button navbar className="landing__connect-btn">
 						Connect Wallet
 					</Button>
-					<Button tertiary navbar className="landing__knits-btn">
+					<Button
+						tertiary
+						navbar
+						className="landing__knits-btn"
+						onClick={() => history.push("/orders")}
+					>
 						0 Knits
 					</Button>
 				</div>

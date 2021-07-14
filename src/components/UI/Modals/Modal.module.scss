@@ -53,18 +53,22 @@
 	// backdrop-filter: blur(10px); // TODO: To use a blur filter or not?
 }
 
+// TODO:
+
 aside.modal {
-	border: 4px solid $color-magenta-outline;
-	width: 50rem;
-	// height: 36.7rem;
-	border-radius: 4px;
-	background-color: white;
+	text-align: center;
 	position: relative;
-	z-index: 2;
-	display: grid;
+	z-index: 20;
 	transition: all 0.3s;
 
-	// row-gap: 2rem;
+	&--wallet {
+		border: 4px solid $color-magenta-outline;
+		width: 50rem;
+		border-radius: 4px;
+		background-color: white;
+		display: grid;
+	}
+
 
 	.modal {
 		&__header {

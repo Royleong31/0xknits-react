@@ -4,6 +4,7 @@ import FAQ from "./components/pages/FAQ/FAQ";
 import Home from "./components/pages/Home/Home";
 import CheckoutPending from "./components/pages/Checkout/CheckoutPending";
 import CheckoutSuccess from "./components/pages/Checkout/CheckoutSuccess";
+import Orders from './components/pages/Orders/Orders';
 
 // TODO: Routing between different pages
 export default function App() {
@@ -24,6 +25,10 @@ export default function App() {
 
 			<Route path="/checkout/success" exact>
 				<CheckoutSuccess />
+			</Route>
+
+			<Route path="/orders" exact>
+				<Orders />
 			</Route>
 
 			<Route path="*">

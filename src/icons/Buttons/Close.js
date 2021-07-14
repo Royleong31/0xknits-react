@@ -7,6 +7,8 @@ export default function Close({ hover, className, onMouseEnter, onMouseLeave, on
 				height="40"
 				viewBox="0 0 40 40"
 				fill="none"
+				onClick={onClick}
+				onMouseLeave={onMouseLeave}
 				xmlns="http://www.w3.org/2000/svg"
 			>
 				<path
@@ -27,6 +29,8 @@ export default function Close({ hover, className, onMouseEnter, onMouseLeave, on
 			height="40"
 			viewBox="0 0 40 40"
 			fill="none"
+			onClick={onClick}
+			onMouseEnter={onMouseEnter}
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<path

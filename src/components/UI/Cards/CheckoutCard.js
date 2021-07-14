@@ -19,7 +19,6 @@ export default function CheckoutCard({ img, name, pool, initial, priceInEth, cla
 			<div className={styles["card__header"]}>
 				<h4>Checkout</h4>
 				<CloseIcon
-					width="35"
 					className={styles["card__close-btn"]}
 					onMouseEnter={() => setIsHovered(true)}
 					onMouseLeave={() => setIsHovered(false)}

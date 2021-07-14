@@ -29,12 +29,15 @@ export default function KnitCard({
 	img2,
 	img3,
 	img4,
+	showBackOnly = false,
 }) {
 	const [showBack, setShowBack] = useState(false);
 	const [isHovered, setIsHovered] = useState(false);
 	const [img, setImg] = useState(img1);
 	const imgContainerRef = useRef();
 	const history = useHistory();
+
+	const infoForCardBack = { name, isHovered, initial, redeemed, pool, height, weight, width, material };
 
 	let cardClasses = `${styles["card"]} `;
 	if (showBack) cardClasses += styles["card--clicked"];
@@ -45,7 +48,7 @@ export default function KnitCard({
 
 	const mouseMoveHandler = event => {
 		const { clientX } = event;
-		const { left, right, width } = imgContainerRef.current.getBoundingClientRect();
+		const { left, width } = imgContainerRef.current.getBoundingClientRect();
 		const quarterWidth = width / 4; // TODO: Change to 8 if 8 images are used
 		const xRelativeToEle = clientX - left;
 		const quarterMouseIsIn = Math.floor(xRelativeToEle / quarterWidth) + 1;
@@ -88,7 +91,7 @@ export default function KnitCard({
 						<img src={img} alt="Knit Image" className={styles["card__image"]} />
 					</div>
 
-					<InfoIcon width="35" className={styles["card__btn"]} hover={isHovered} />
+					<InfoIcon className={styles["card__btn"]} hover={isHovered} />
 
 					<div className={styles["card__title"]}>
 						<h3 className={styles["card__name"]}>{name}</h3>
@@ -102,59 +105,82 @@ export default function KnitCard({
 						<p className={styles["card__USD"]}>${priceInEth * 2100} USD</p>
 					</div>
 				</div>
-				<div className={styles["card__back"]}>
-					<div className={styles["card__back-top"]}>
-						<h3 className={styles["card__name"]}>{name}</h3>
-						<CloseIcon className={styles["card__btn"]} hover={isHovered} />
-
-						<div className={styles["card__info"]}>
-							<InitialIcon className={styles["card__info-icon"]} />
-							<p className={styles["card__info-title"]}>Initial</p>
-							<p className={styles["card__info-desc"]}>{initial}</p>
-						</div>
-						<div className={styles["card__info"]}>
-							<RedeemedIcon className={styles["card__info-icon"]} />
-							<p className={styles["card__info-title"]}>Redeemed</p>
-							<p className={styles["card__info-desc"]}>{redeemed}</p>
-						</div>
-						<div className={styles["card__info"]}>
-							<PoolIcon className={styles["card__info-icon"]} />
-							<p className={styles["card__info-title"]}>Pool</p>
-							<p className={styles["card__info-desc"]}>{pool}</p>
-						</div>
-					</div>
-
-					<div className={styles["card__back-bottom"]}>
-						<h5 className={styles["card__attributes-title"]}>Attributes</h5>
-
-						<div className={styles["card__attribute"]}>
-							<HeightIcon className={styles["card__attribute-icon"]} />
-							<p className={styles["card__info-title"]}>Height</p>
-							<p className={styles["card__info-desc"]}>{height}cm</p>
-						</div>
-
-						<div className={styles["card__attribute"]}>
-							<WeightIcon className={styles["card__attribute-icon"]} />
-							<p className={styles["card__info-title"]}>Weight</p>
-							<p className={styles["card__info-desc"]}>{weight}g</p>
-						</div>
-
-						<div className={styles["card__attribute"]}>
-							<WidthIcon className={styles["card__attribute-icon"]} />
-							<p className={styles["card__info-title"]}>Width</p>
-							<p className={styles["card__info-desc"]}>{width}cm</p>
-						</div>
-
-						<div className={styles["card__attribute"]}>
-							<WoolIcon className={styles["card__attribute-icon"]} />
-							<p className={styles["card__info-title"]}>Material</p>
-							<p className={styles["card__info-desc"]}>{material}</p>
-						</div>
-					</div>
-				</div>
+				<KnitCardBack {...infoForCardBack} />
 			</div>
 
 			<Button onClick={buyHandler}>Buy</Button>
 		</div>
 	);
+}
+
+export function KnitCardBack({
+	name,
+	isHovered,
+	initial,
+	redeemed,
+	pool,
+	height,
+	weight,
+	width,
+	material,
+	standAloneCard = false,
+	className,
+}) {
+	const cardBack = (
+		<div className={styles["card__back"]}>
+			<div className={styles["card__back-top"]}>
+				<h3 className={styles["card__name"]}>{name}</h3>
+				<CloseIcon className={styles["card__btn"]} hover={isHovered} />
+
+				<div className={styles["card__info"]}>
+					<InitialIcon className={styles["card__info-icon"]} />
+					<p className={styles["card__info-title"]}>Initial</p>
+					<p className={styles["card__info-desc"]}>{initial}</p>
+				</div>
+				<div className={styles["card__info"]}>
+					<RedeemedIcon className={styles["card__info-icon"]} />
+					<p className={styles["card__info-title"]}>Redeemed</p>
+					<p className={styles["card__info-desc"]}>{redeemed}</p>
+				</div>
+				<div className={styles["card__info"]}>
+					<PoolIcon className={styles["card__info-icon"]} />
+					<p className={styles["card__info-title"]}>Pool</p>
+					<p className={styles["card__info-desc"]}>{pool}</p>
+				</div>
+			</div>
+
+			<div className={styles["card__back-bottom"]}>
+				<h5 className={styles["card__attributes-title"]}>Attributes</h5>
+
+				<div className={styles["card__attribute"]}>
+					<HeightIcon className={styles["card__attribute-icon"]} />
+					<p className={styles["card__info-title"]}>Height</p>
+					<p className={styles["card__info-desc"]}>{height}cm</p>
+				</div>
+
+				<div className={styles["card__attribute"]}>
+					<WeightIcon className={styles["card__attribute-icon"]} />
+					<p className={styles["card__info-title"]}>Weight</p>
+					<p className={styles["card__info-desc"]}>{weight}g</p>
+				</div>
+
+				<div className={styles["card__attribute"]}>
+					<WidthIcon className={styles["card__attribute-icon"]} />
+					<p className={styles["card__info-title"]}>Width</p>
+					<p className={styles["card__info-desc"]}>{width}cm</p>
+				</div>
+
+				<div className={styles["card__attribute"]}>
+					<WoolIcon className={styles["card__attribute-icon"]} />
+					<p className={styles["card__info-title"]}>Material</p>
+					<p className={styles["card__info-desc"]}>{material}</p>
+				</div>
+			</div>
+		</div>
+	);
+
+	if (standAloneCard)
+		return <div className={`${styles["card"]} ${styles["card--clicked"]}`}>{cardBack}</div>;
+
+	return cardBack;
 }

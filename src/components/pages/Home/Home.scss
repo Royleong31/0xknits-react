@@ -11,18 +11,16 @@ section.landing {
 		&__container {
 			display: grid;
 			grid-template-rows: min-content 1fr min-content 1fr;
-			grid-template-columns:
-				[full-start] minmax(6rem, 1fr) [center-start] repeat(
-					8,
-					[col-start] minmax(min-content, 15rem) [col-end]
-				)
-				[center-end] minmax(6rem, 1fr) [full-end];
+			grid-template-columns: $grid-columns;
 			height: 100%;
 		}
 
 		&__nav-logo {
-			transform: scale(0.85);
 			margin-right: auto;
+
+			@include respond(laptop) {
+				transform: scale(0.875);
+			}
 		}
 
 		&__nav-container,
@@ -34,13 +32,13 @@ section.landing {
 
 		&__nav-container {
 			display: flex;
-			justify-content: space-between;
+			justify-content: flex-end;
 			align-items: center;
-			margin-top: 1rem;
+			margin-top: 2.6rem;
 		}
 
 		&__connect-btn {
-			margin-right: 2.5rem;
+			margin-right: 3.2rem;
 		}
 
 		&__main {
@@ -50,8 +48,12 @@ section.landing {
 		&__main-logo {
 			align-self: end;
 			justify-self: center;
-			transform: scale(1.4);
-			margin-bottom: 5rem;
+			margin-bottom: 8rem;
+			transform: scale(1.45);
+
+			@include respond(laptop) {
+				transform: scale(1.27);
+			}
 		}
 
 		&__sub {
@@ -74,12 +76,7 @@ section.knits {
 		&__container {
 			display: grid;
 			row-gap: 2rem;
-			grid-template-columns:
-				[full-start] minmax(6rem, 1fr) [center-start] repeat(
-					8,
-					[col-start] minmax(min-content, 15rem) [col-end]
-				)
-				[center-end] minmax(6rem, 1fr) [full-end];
+			grid-template-columns: $grid-columns;
 			height: 100%;
 		}
 
@@ -89,11 +86,11 @@ section.knits {
 
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
-			gap: 5rem;
+			gap: 8rem;
 		}
 
 		&__sub {
-			grid-column: center-start / center-end;
+			grid-column: col-start 2 / col-end 7;
 			font-size: $font-size-2;
 			color: $color-mauve;
 			line-height: 1.5;

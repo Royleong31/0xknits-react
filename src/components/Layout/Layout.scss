@@ -2,8 +2,12 @@
 
 main.container {
 	display: grid;
-	grid-template-columns: $laptop-grid-columns;
 	grid-template-rows: 100vh repeat(3, min-content);
+	grid-template-columns: $grid-columns;
+
+	@include respond(laptop) {
+		grid-template-columns: $laptop-grid-columns;
+	}
 }
 
 main.container--faq {
@@ -17,12 +21,7 @@ nav.navbar {
 	width: 100%;
 	grid-column: full-start / full-end;
 	display: grid;
-	grid-template-columns:
-		[full-start] minmax(6rem, 1fr) [center-start] repeat(
-			8,
-			[col-start] minmax(min-content, 15rem) [col-end]
-		)
-		[center-end] minmax(6rem, 1fr) [full-end];
+	grid-template-columns: $grid-columns;
 
 	position: fixed;
 	top: 0;
@@ -36,13 +35,13 @@ nav.navbar {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			padding: 1rem 0;
+			padding: 1.3rem 0;
 			// height: 10rem;
 			grid-column: center-start / center-end;
 		}
 
 		&__nav-logo {
-			transform: scale(0.85);
+			transform: scale(0.92);
 			margin-right: auto;
 		}
 
@@ -56,58 +55,60 @@ footer.footer {
 	background-color: $color-sky;
 	padding: 9.5rem 0;
 	grid-column: 1 / -1;
-	// font-size: 2rem;
+	color: $color-magenta;
 
 	display: grid;
-	grid-template-columns:
-		[full-start] minmax(6rem, 1fr) [center-start] repeat(
-			8,
-			[col-start] minmax(min-content, 15rem) [col-end]
-		)
-		[center-end] minmax(6rem, 1fr) [full-end];
+	grid-template-columns: $grid-columns;
 
 	.footer {
 		&__container {
 			grid-column: center-start / center-end;
 			display: grid;
 			grid-template-rows: repeat(3, min-content);
-			grid-template-columns: repeat(8, [col-start] minmax(min-content, 15rem) [col-end]);
+			grid-template-columns: $grid-columns;
 			align-items: center;
-			row-gap: 1.5rem;
+			gap: 1.7rem 0;
 		}
 
 		&__logo {
-			grid-column: col-start 1 / col-end 2;
+			grid-column: col-start 1 / col-end 1;
 			grid-row: 1 / -1;
+			transform: scale(1.18);
 		}
 
 		&__heading {
 			grid-column: col-start 3 / col-end 6;
 			font-size: 1.8rem;
+			line-height: 1.4;
 		}
 
 		&__content {
-			grid-column: col-start 3 / col-end 6;
+			grid-column: col-start 3 / col-end 7;
+			margin-right: 4rem;
 			line-height: 1.5;
+			font-size: 2rem;
 		}
 
 		&__faq {
-			grid-column: col-start 7 / col-end 7;
+			grid-column: col-start 8 / col-end 8;
 			grid-row: 1 / span 1;
-			margin-left: 2rem;
+			// margin-left: 2rem;
 			font-size: 1.8rem;
 			text-decoration: none;
 		}
 
 		&__icon-container {
 			grid-row: 2 / span 1;
-			grid-column: col-start 7 / col-end 7;
+			grid-column: col-start 8 / col-end 8;
 			align-self: start;
 		}
 
 		&__icon {
-			margin-left: 2rem;
 			cursor: pointer;
+
+			&--2 {
+				margin-left: 2.4rem;
+			}
 		}
 	}
 }

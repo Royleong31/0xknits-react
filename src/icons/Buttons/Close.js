@@ -1,16 +1,12 @@
-export default function Close({ hover, className, width, onMouseEnter, onMouseLeave, onClick }) {
-	if (!width) width = "40";
-
+export default function Close({ hover, className, onMouseEnter, onMouseLeave, onClick }) {
 	if (hover)
 		return (
 			<svg
 				className={className}
-				width={width}
+				width="40"
 				height="40"
 				viewBox="0 0 40 40"
 				fill="none"
-				onMouseLeave={onMouseLeave}
-				onClick={onClick}
 				xmlns="http://www.w3.org/2000/svg"
 			>
 				<path
@@ -27,12 +23,10 @@ export default function Close({ hover, className, width, onMouseEnter, onMouseLe
 	return (
 		<svg
 			className={className}
-			width={width}
+			width="40"
 			height="40"
 			viewBox="0 0 40 40"
 			fill="none"
-			onMouseEnter={onMouseEnter}
-			onClick={onClick}
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<path

@@ -21,11 +21,9 @@ export default function Home() {
 	};
 
 	useEffect(() => {
-		console.log("inside useeffect");
 		window.addEventListener("scroll", scrollHandler);
 
 		return () => {
-			console.log("removeing useeffect");
 			window.removeEventListener("scroll", scrollHandler);
 		};
 	}, []);

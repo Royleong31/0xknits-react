@@ -46,7 +46,7 @@ export default function Footer() {
 							hover={isInstagramHovered}
 							onMouseEnter={() => setIsInstagramHovered(true)}
 							onMouseLeave={() => setIsInstagramHovered(false)}
-							className="footer__icon"
+							className="footer__icon footer__icon--2"
 						/>
 					</a>
 				</div>

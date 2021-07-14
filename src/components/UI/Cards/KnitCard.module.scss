@@ -4,7 +4,8 @@
 	position: relative;
 	cursor: pointer;
 	margin-bottom: 3rem;
-	height: 53rem;
+	height: 70.5rem;
+	width: 48.5rem;
 	perspective: 160rem;
 
 	&--clicked {
@@ -64,24 +65,25 @@
 
 		.card {
 			&__image-container {
-				background-color: $color-mauve;
+				background-color: $color-mauve-80;
 				display: grid;
 				place-content: center;
 				grid-column: 1 / -1;
 				grid-row: 1 / span 1;
-				height: 32rem;
+				height: 47.7rem;
 			}
 
 			&__image {
 				width: 100%;
 				height: 100%;
+				transform: scale(1.5);
 			}
 
 			&__btn {
 				grid-column: 1 / -1;
 				grid-row: 1 / span 1;
 				justify-self: end;
-				margin: 1rem;
+				margin: 2.4rem;
 			}
 
 			&__title {
@@ -93,17 +95,18 @@
 
 			&__available {
 				font-size: $font-size-1;
-				margin-top: 1.5rem;
+				margin-top: 1rem;
+				line-height: 1.5;
 			}
 
 			&__price {
 				grid-row: 3 / span 1;
 
 				display: grid;
-				grid-template-columns: repeat(2, minmax(max-content, 1fr));
-				align-items: baseline;
+				grid-template-columns: repeat(2, max-content);
+				column-gap: 1.6rem;
 				place-content: center;
-				
+				align-items: baseline;
 			}
 
 			&__eth {
@@ -120,37 +123,43 @@
 	&__back {
 		background-color: white;
 		color: $color-mauve;
-		line-height: 1.5;
 		transform: rotateY(180deg);
 
 		// TODO: REMOVE!!
 		// z-index: 2;
 
 		display: grid;
-		// grid-template-rows: 1fr 1fr;
+		grid-template-rows: min-content 1fr;
 
 		.card {
 			&__info-title {
-				font-size: $font-size-default;
+				line-height: 1.5;
+				font-size: 2rem;
+				font-weight: 300;
 			}
 
 			&__info-desc {
-				font-size: $font-size-1;
+				line-height: 1.5;
+
+				font-size: 2.8rem;
+				font-weight: 700;
 			}
 		}
 
 		&-top {
 			display: grid;
-			grid-template-rows: 8rem min-content;
+			grid-template-rows: 12rem min-content;
 			grid-template-columns: repeat(3, 1fr);
+			// align-content: center;
 			// row-gap: 1rem;
-			padding-bottom: 1rem;
+			padding-bottom: 1.84rem;
 
 			.card {
 				&__name {
 					grid-column: 1 / -1;
 					grid-row: 1 / span 1;
-					align-self: end;
+					align-self: center;
+					// margin-bottom: 4.3rem;
 				}
 
 				&__btn {
@@ -161,23 +170,28 @@
 				}
 
 				&__info-icon {
-					transform: scale(0.8);
+					transform: scale(0.96);
+					margin-bottom: 0.5rem;
 				}
 			}
 		}
 
 		&-bottom {
-			padding-top: 1rem;
-			padding: 1rem;
+			padding-top: 3.1rem;
+			padding: 2.4rem;
 			background-color: $color-sunshine;
 
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(3, min-content);
+			gap: 2.8rem 3rem;
 
 			.card {
 				&__attributes-title {
 					font-size: $font-size-3;
+					font-family: $font-paragraph;
+					font-weight: bold;
+
 					color: $color-magenta;
 					grid-column: 1 / -1;
 					margin-bottom: 1rem;
@@ -188,11 +202,13 @@
 					grid-template-columns: min-content 1fr;
 					align-items: end;
 					justify-items: start;
+					column-gap: 2rem;
 
 					&-icon {
 						grid-column: 1 / span 1;
 						grid-row: 1 / span 2;
 						align-self: center;
+						transform: scale(0.95);
 					}
 
 					.card__info-title {
@@ -201,12 +217,7 @@
 
 					.card__info-desc {
 						align-self: start;
-						line-height: 1;
 					}
-				}
-
-				&__attribute-icon {
-					transform: scale(0.8);
 				}
 			}
 		}

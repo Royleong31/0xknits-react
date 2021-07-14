@@ -6,9 +6,10 @@ export default function Landing() {
 		<section className="landing">
 			<div className="landing__container">
 				<div className="landing__nav-container">
-					<div className="landing__nav-logo">
+					{/* <div className="landing__nav-logo">
 						<Logo className="landing__nav-logo" />
-					</div>
+					</div> */}
+
 					<Button navbar className="landing__connect-btn">
 						Connect Wallet
 					</Button>

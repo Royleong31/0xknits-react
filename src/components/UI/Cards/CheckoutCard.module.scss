@@ -5,7 +5,7 @@
 
 	border-radius: 4px;
 	background-color: white;
-	width: 36.7rem;
+	width: 48.5rem;
 	color: $color-magenta;
 	position: relative;
 	z-index: 2;
@@ -14,20 +14,24 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 1rem;
+		padding: 1.5rem;
 	}
 
 	&__close-btn {
 		cursor: pointer;
 	}
 
+	&__image {
+		transform: scale(1.5);
+	}
+
 	&__image-container {
-		background-color: $color-mauve;
+		background-color: $color-mauve-80;
 		display: grid;
 		place-content: center;
 		border-top: 4px solid $color-magenta-outline;
 		border-bottom: 4px solid $color-magenta-outline;
-		height: 32rem;
+		height: 48.5rem;
 	}
 
 	&__title {
@@ -37,7 +41,8 @@
 	}
 
 	&__available {
-		font-size: $font-size-1;
+		font-size: 2rem;
+		font-weight: 300;
 		margin-top: 1.5rem;
 	}
 
@@ -47,7 +52,6 @@
 		gap: 1rem 2rem;
 		grid-template-columns: 1fr 2fr;
 		grid-template-rows: min-content 1fr;
-		height: 11rem;
 	}
 
 	&__detail {

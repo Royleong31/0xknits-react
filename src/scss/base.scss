@@ -44,7 +44,7 @@
 	}
 
 	@if $breakpoint == laptop {
-		@media (max-width: 1600px) {
+		@media (max-width: 1700px) {
 			@content;
 		}
 	}
@@ -103,14 +103,14 @@ $font-size-4: pow($font-type-scale, 4) * $font-size-default; // 50.06px
 $font-size-5: pow($font-type-scale, 5) * $font-size-default; // 66.6px
 
 // LAYOUT VARIABLES
+$grid-columns: [full-start] minmax(6rem, 1fr) [center-start]
+	repeat(8, [col-start] minmax(min-content, 20rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
 $laptop-grid-columns: [full-start] minmax(6rem, 1fr) [center-start]
 	repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 
-$desktop-grid-columns: [full-start] minmax(6rem, 1fr) [center-start]
-	repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-
 *,
-*::before,
+*::before,	
 *::after {
 	margin: 0;
 	padding: 0;
@@ -122,7 +122,7 @@ html {
 	font-size: 62.5%;
 
 	@include respond(laptop) {
-		// font-size: 55%;
+		font-size: 55%;
 	}
 }
 

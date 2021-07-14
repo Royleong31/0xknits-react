@@ -93,7 +93,7 @@ export default function KnitCard({
 					<div className={styles["card__title"]}>
 						<h3 className={styles["card__name"]}>{name}</h3>
 						<p className={styles["card__available"]}>
-							{pool}/{initial}
+							{pool}/{initial} available
 						</p>
 					</div>
 
@@ -105,7 +105,7 @@ export default function KnitCard({
 				<div className={styles["card__back"]}>
 					<div className={styles["card__back-top"]}>
 						<h3 className={styles["card__name"]}>{name}</h3>
-						<CloseIcon width="35" className={styles["card__btn"]} hover={isHovered} />
+						<CloseIcon className={styles["card__btn"]} hover={isHovered} />
 
 						<div className={styles["card__info"]}>
 							<InitialIcon className={styles["card__info-icon"]} />
@@ -130,19 +130,19 @@ export default function KnitCard({
 						<div className={styles["card__attribute"]}>
 							<HeightIcon className={styles["card__attribute-icon"]} />
 							<p className={styles["card__info-title"]}>Height</p>
-							<p className={styles["card__info-desc"]}>{height}</p>
+							<p className={styles["card__info-desc"]}>{height}cm</p>
 						</div>
 
 						<div className={styles["card__attribute"]}>
 							<WeightIcon className={styles["card__attribute-icon"]} />
 							<p className={styles["card__info-title"]}>Weight</p>
-							<p className={styles["card__info-desc"]}>{weight}</p>
+							<p className={styles["card__info-desc"]}>{weight}g</p>
 						</div>
 
 						<div className={styles["card__attribute"]}>
 							<WidthIcon className={styles["card__attribute-icon"]} />
 							<p className={styles["card__info-title"]}>Width</p>
-							<p className={styles["card__info-desc"]}>{width}</p>
+							<p className={styles["card__info-desc"]}>{width}cm</p>
 						</div>
 
 						<div className={styles["card__attribute"]}>

@@ -22,6 +22,34 @@
 	font-weight: 300;
 }
 
+// MIXINS
+@mixin respond($breakpoint) {
+	@if $breakpoint == phone {
+		// ?: Only applies to screens, not printed
+		@media only screen and (max-width: 600px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == tab-port {
+		@media only screen and (max-width: 900px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == tab-land {
+		@media (max-width: 1200px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == laptop {
+		@media (max-width: 1600px) {
+			@content;
+		}
+	}
+}
+
 // FUNCTIONS
 @function pow($base, $exponent) {
 	$result: 1;
@@ -66,12 +94,20 @@ $font-paragraph: "Hamburg Hand", sans-serif;
 $font-type-scale: 1.333;
 
 // FONT SIZES
-$font-size-default: 14px; // !: Supposed ot be 16px on a 1920px screen. So everything should be 14/16 of design file
+$font-size-default: 1.6rem; // !: Supposed ot be 16px on a 1920px screen. So everything should be 14/16 of design file
+
 $font-size-1: pow($font-type-scale, 1) * $font-size-default; // 21.28px
 $font-size-2: pow($font-type-scale, 2) * $font-size-default; // 28.3px
 $font-size-3: pow($font-type-scale, 3) * $font-size-default; // 37.6px
 $font-size-4: pow($font-type-scale, 4) * $font-size-default; // 50.06px
 $font-size-5: pow($font-type-scale, 5) * $font-size-default; // 66.6px
+
+// LAYOUT VARIABLES
+$laptop-grid-columns: [full-start] minmax(6rem, 1fr) [center-start]
+	repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+$desktop-grid-columns: [full-start] minmax(6rem, 1fr) [center-start]
+	repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 
 *,
 *::before,
@@ -84,6 +120,10 @@ $font-size-5: pow($font-type-scale, 5) * $font-size-default; // 66.6px
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
+
+	@include respond(laptop) {
+		// font-size: 55%;
+	}
 }
 
 body {

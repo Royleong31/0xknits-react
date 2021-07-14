@@ -55,8 +55,12 @@ button.btn {
 	}
 
 	&--small {
-		width: $small-width;
-		height: $small-height;
+		// width: $small-width;
+		// height: $small-height;
+
+		// ?: For laptop size (14/16 of actual)
+		height: 5.6rem;
+
 		font-size: $font-size-1;
 	}
 

@@ -2,7 +2,8 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import FAQ from "./components/pages/FAQ/FAQ";
 import Home from "./components/pages/Home/Home";
-import Checkout from "./components/pages/Checkout/Checkout";
+import CheckoutPending from "./components/pages/Checkout/CheckoutPending";
+import CheckoutSuccess from "./components/pages/Checkout/CheckoutSuccess";
 
 // TODO: Routing between different pages
 export default function App() {
@@ -13,12 +14,16 @@ export default function App() {
 				<Home />
 			</Route>
 
-			<Route path="/faq">
+			<Route path="/faq" exact>
 				<FAQ />
 			</Route>
 
-			<Route path="/checkout">
-				<Checkout />
+			<Route path="/checkout" exact>
+				<CheckoutPending />
+			</Route>
+
+			<Route path="/checkout/success" exact>
+				<CheckoutSuccess />
 			</Route>
 
 			<Route path="*">

@@ -1,14 +1,17 @@
 import { useState, useRef } from "react";
+import { useHistory } from "react-router-dom";
 
 import styles from "./CheckoutCard.module.scss";
 import CloseIcon from "../../../icons/Buttons/Close";
 import Chevron from "../../../icons/Chevron";
 
 export default function CheckoutCard({ img, name, pool, initial, priceInEth, className }) {
+	const history = useHistory();
 	const [isHovered, setIsHovered] = useState(false);
 
 	const closeHandler = () => {
 		console.log("closing checkout card");
+		history.goBack();
 	};
 
 	return (
@@ -17,7 +20,7 @@ export default function CheckoutCard({ img, name, pool, initial, priceInEth, cla
 				<h4>Checkout</h4>
 				<CloseIcon
 					width="35"
-					className={styles["card__btn"]}
+					className={styles["card__close-btn"]}
 					onMouseEnter={() => setIsHovered(true)}
 					onMouseLeave={() => setIsHovered(false)}
 					onClick={closeHandler}

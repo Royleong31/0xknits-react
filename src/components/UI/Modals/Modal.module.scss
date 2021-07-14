@@ -11,11 +11,6 @@
 .modalAnimation-enter-active {
 	transition: all 0.3s;
 	opacity: 1;
-
-	aside.modal {
-		transform: scale(1);
-		transition: all 0.3s 0.2s;
-	}
 }
 
 .modalAnimation-exit {
@@ -32,22 +27,30 @@
 
 	aside.modal {
 		transform: scale(0);
-		transition: all 0.3s;
 	}
 }
 
-.modal--overlay {
-	background-color: rgba(black, 0.8);
-	// backdrop-filter: blur(10px); // TODO: To use a blur filter or not?
-	width: 100vw;
-	height: 100vh;
-	z-index: 15;
+.modal__container {
 	position: fixed;
 	top: 0;
 	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 15;
 
-	display: grid;
 	place-content: center;
+	display: grid;
+}
+
+.modal__overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1;
+	background-color: rgba(black, 0.8);
+	// backdrop-filter: blur(10px); // TODO: To use a blur filter or not?
 }
 
 aside.modal {
@@ -57,7 +60,7 @@ aside.modal {
 	border-radius: 4px;
 	background-color: white;
 	position: relative;
-	z-index: 0;
+	z-index: 2;
 	display: grid;
 	transition: all 0.3s;
 

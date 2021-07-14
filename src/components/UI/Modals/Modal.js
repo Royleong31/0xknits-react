@@ -9,7 +9,7 @@ import TrustWalletLogo from "../../../icons/Payment/TrustWallet";
 import CoinbaseLogo from "../../../icons/Payment/Coinbase";
 import CloseIcon from "../../../icons/Buttons/Close";
 
-export default function Modal({ isModalOpen, closeModalHandler }) {
+export default function Modal({ isModalOpen, cancelHandler, successHandler }) {
 	const [isHovered, setIsHovered] = useState(false);
 
 	return (
@@ -26,30 +26,32 @@ export default function Modal({ isModalOpen, closeModalHandler }) {
 					exitActive: styles["modalAnimation-exit-active"],
 				}}
 			>
-				<div className={styles["modal--overlay"]} onClick={closeModalHandler}>
+				<div className={styles["modal__container"]}>
+					<div className={styles["modal__overlay"]} onClick={cancelHandler} />
+
 					<aside className={styles["modal"]}>
 						<div className={styles["modal__header"]}>
 							<h5 className={styles["modal__header-text"]}>Connect Wallet</h5>
 							<CloseIcon
 								className={styles["modal__close-icon"]}
-								onClick={closeModalHandler}
+								onClick={cancelHandler}
 								onMouseEnter={() => setIsHovered(true)}
 								onMouseLeave={() => setIsHovered(false)}
 								hover={isHovered}
 							/>
 						</div>
 
-						<Button className={styles["modal__btn"]} tertiary>
+						<Button onClick={successHandler} className={styles["modal__btn"]} tertiary>
 							<p className={styles["modal__btn-text"]}>Metamask</p>
 							<MetamaskLogo className={styles["modal__payment-icon"]} />
 						</Button>
 
-						<Button className={styles["modal__btn"]} tertiary>
+						<Button onClick={successHandler} className={styles["modal__btn"]} tertiary>
 							<p className={styles["modal__btn-text"]}>Trust Wallet</p>
 							<TrustWalletLogo className={styles["modal__payment-icon"]} />
 						</Button>
 
-						<Button className={styles["modal__btn"]} tertiary>
+						<Button onClick={successHandler} className={styles["modal__btn"]} tertiary>
 							<p className={styles["modal__btn-text"]}>Coinbase</p>
 							<CoinbaseLogo className={styles["modal__payment-icon"]} />
 						</Button>

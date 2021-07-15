@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
+
 @font-face {
 	font-family: "Funnier";
 	src: url("../fonts/Funnier.ttf");
@@ -94,7 +96,7 @@ $font-paragraph: "Hamburg Hand", sans-serif;
 $font-type-scale: 1.333;
 
 // FONT SIZES
-$font-size-default: 1.6rem; // !: Supposed ot be 16px on a 1920px screen. So everything should be 14/16 of design file
+$font-size-default: 1.6rem;
 
 $font-size-1: pow($font-type-scale, 1) * $font-size-default; // 21.28px
 $font-size-2: pow($font-type-scale, 2) * $font-size-default; // 28.3px
@@ -106,8 +108,8 @@ $font-size-5: pow($font-type-scale, 5) * $font-size-default; // 66.6px
 $grid-columns: [full-start] minmax(6rem, 1fr) [center-start]
 	repeat(8, [col-start] minmax(min-content, 20rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 
-$laptop-grid-columns: [full-start] minmax(6rem, 1fr) [center-start]
-	repeat(8, [col-start] minmax(min-content, 15rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+$laptop-grid-columns: [full-start] minmax(8rem, 1fr) [center-start]
+	repeat(8, [col-start] minmax(min-content, 20rem) [col-end]) [center-end] minmax(8rem, 1fr) [full-end];
 
 *,
 *::before,
@@ -122,7 +124,7 @@ html {
 	font-size: 62.5%;
 
 	@include respond(laptop) {
-		font-size: 55%;
+		font-size: 50%;
 	}
 }
 

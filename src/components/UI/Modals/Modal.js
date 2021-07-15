@@ -45,10 +45,9 @@ export default function Modal({ isModalOpen, cancelHandler, connectWallet = true
 				exitActive: styles["modalAnimation-exit-active"],
 			}}
 		>
-			<div className={styles["modal__container"]}>
-				<div className={styles["modal__overlay"]} onClick={walletCancelHandler} />
-
-				{connectWallet ? (
+			{connectWallet ? (
+				<div className={styles["modal__container"]}>
+					<div className={styles["modal__overlay"]} onClick={walletCancelHandler} />
 					<aside className={`${styles["modal"]} ${styles["modal--wallet"]}`}>
 						<div className={styles["modal__header"]}>
 							<h5 className={styles["modal__header-text"]}>Connect Wallet</h5>
@@ -76,12 +75,15 @@ export default function Modal({ isModalOpen, cancelHandler, connectWallet = true
 							<CoinbaseLogo className={styles["modal__payment-icon"]} />
 						</Button>
 					</aside>
-				) : (
+				</div>
+			) : (
+				<div className={styles["modal__container"]}>
+					<div className={styles["modal__overlay"]} onClick={cancelHandler} />
 					<aside className={styles["modal"]}>
 						<KnitCardBack onClick={cancelHandler} standAloneCard={true} {...dummyKnit} />
 					</aside>
-				)}
-			</div>
+				</div>
+			)}
 		</CSSTransition>
 	);
 

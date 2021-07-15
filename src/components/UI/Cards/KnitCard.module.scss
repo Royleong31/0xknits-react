@@ -5,8 +5,11 @@
 	cursor: pointer;
 	margin-bottom: 3rem;
 	height: 70.5rem;
-	width: 48.5rem;
 	perspective: 160rem;
+
+	@include respond(laptop) {
+		height: 65rem;
+	}
 
 	&--clicked {
 		.card__front {
@@ -19,6 +22,7 @@
 	}
 
 	&--modal {
+		width: 48.5rem;
 		.card__back {
 			transform: rotateY(0);
 			cursor: auto;
@@ -76,12 +80,20 @@
 				grid-column: 1 / -1;
 				grid-row: 1 / span 1;
 				height: 47.7rem;
+
+				@include respond(laptop) {
+					height: 40rem;
+				}
 			}
 
 			&__image {
 				width: 100%;
 				height: 100%;
 				transform: scale(1.5);
+
+				@include respond(laptop) {
+					transform: none;
+				}
 			}
 
 			&__btn {
@@ -89,6 +101,10 @@
 				grid-row: 1 / span 1;
 				justify-self: end;
 				margin: 2.4rem;
+
+				@include respond(laptop) {
+					margin: 1.5rem;
+				}
 			}
 
 			&__title {
@@ -141,6 +157,10 @@
 				line-height: 1.5;
 				font-size: 2rem;
 				font-weight: 300;
+
+				@include respond(laptop) {
+					font-size: 1.8rem;
+				}
 			}
 
 			&__info-desc {
@@ -148,6 +168,10 @@
 
 				font-size: 2.8rem;
 				font-weight: 700;
+
+				@include respond(laptop) {
+					font-size: 2.5rem;
+				}
 			}
 		}
 
@@ -159,12 +183,15 @@
 			// row-gap: 1rem;
 			padding-bottom: 1.84rem;
 
+			@include respond(laptop) {
+				grid-template-rows: min-content min-content;
+			}
+
 			.card {
 				&__name {
 					grid-column: 1 / -1;
 					grid-row: 1 / span 1;
 					align-self: center;
-					// margin-bottom: 4.3rem;
 				}
 
 				&__btn {
@@ -176,7 +203,8 @@
 				}
 
 				&__info-icon {
-					transform: scale(0.96);
+					width: 10rem;
+					height: 10rem;
 					margin-bottom: 0.5rem;
 				}
 			}
@@ -192,6 +220,10 @@
 			grid-template-rows: repeat(3, min-content);
 			gap: 2.8rem 3rem;
 
+			@include respond(laptop) {
+				padding: 2rem;
+			}
+
 			.card {
 				&__attributes-title {
 					font-size: $font-size-3;
@@ -201,6 +233,10 @@
 					color: $color-magenta;
 					grid-column: 1 / -1;
 					margin-bottom: 1rem;
+
+					@include respond(laptop) {
+						margin-bottom: 0.5rem;
+					}
 				}
 
 				&__attribute {
@@ -210,11 +246,16 @@
 					justify-items: start;
 					column-gap: 2rem;
 
+					@include respond(laptop) {
+						// column-gap: 0.5rem;
+					}
+
 					&-icon {
 						grid-column: 1 / span 1;
 						grid-row: 1 / span 2;
 						align-self: center;
-						transform: scale(0.95);
+						height: 8rem;
+						width: 8rem;
 					}
 
 					.card__info-title {

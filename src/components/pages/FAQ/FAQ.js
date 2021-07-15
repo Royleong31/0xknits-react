@@ -19,9 +19,13 @@ const dummyFAQArr = [
 ];
 
 export default function FAQ() {
+	const style = {
+		gridTemplateRows: `repeat(${dummyFAQArr.length}, min-content)`,
+	};
+
 	return (
 		<Layout navbar footer page="faq">
-			<section className="faq">
+			<section className="faq" style={style}>
 				<h1 className="faq__header">FAQ</h1>
 
 				{dummyFAQArr.map((faq, i) => (

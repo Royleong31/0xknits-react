@@ -14,6 +14,8 @@ main.container--faq {
 	grid-template-rows: none;
 	background-color: $color-linen;
 	padding-top: 10rem;
+	min-height: 100vh;
+	grid-template-rows: 1fr min-content;
 }
 
 nav.navbar {
@@ -35,18 +37,23 @@ nav.navbar {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			padding: 1.3rem 0;
-			// height: 10rem;
+			padding: 1.8rem 0;
 			grid-column: center-start / center-end;
+
+			@include respond(laptop) {
+				padding: 2rem 0;
+			}
 		}
 
 		&__nav-logo {
-			transform: scale(0.92);
+			// transform: scale(0.92);
 			margin-right: auto;
+			width: 18.7rem;
+			height: 6.4rem;
 		}
 
 		&__connect-btn {
-			margin-right: 2.5rem;
+			margin-right: 3rem;
 		}
 	}
 }
@@ -60,6 +67,10 @@ footer.footer {
 	display: grid;
 	grid-template-columns: $grid-columns;
 
+	@include respond(laptop) {
+		padding: 5rem 0;
+	}
+
 	.footer {
 		&__container {
 			grid-column: center-start / center-end;
@@ -68,12 +79,17 @@ footer.footer {
 			grid-template-columns: $grid-columns;
 			align-items: center;
 			gap: 1.7rem 0;
+
+			@include respond(laptop) {
+				gap: 1rem 0;
+			}
 		}
 
 		&__logo {
 			grid-column: col-start 1 / col-end 1;
 			grid-row: 1 / -1;
-			transform: scale(1.18);
+			width: 26rem;
+			height: 8.8rem;
 		}
 
 		&__heading {
@@ -95,12 +111,20 @@ footer.footer {
 			// margin-left: 2rem;
 			font-size: 1.8rem;
 			text-decoration: none;
+
+			@include respond(laptop) {
+				margin-left: 5rem;
+			}
 		}
 
 		&__icon-container {
 			grid-row: 2 / span 1;
 			grid-column: col-start 8 / col-end 8;
 			align-self: start;
+
+			@include respond(laptop) {
+				margin-left: 5rem;
+			}
 		}
 
 		&__icon {

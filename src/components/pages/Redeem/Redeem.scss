@@ -1,13 +1,10 @@
 @import "base.scss";
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-
 
 section.shipping {
 	// TODO: Change this to viewport height if screen is tall enough, otherwise put padding
 	min-height: 100vh;
 	width: 100%;
-	padding: 10rem;
-	padding: 10rem 0;
+	padding: 3rem;
 	background-color: $color-sky;
 	display: grid;
 	place-content: center;
@@ -37,14 +34,15 @@ section.shipping {
 		&__card {
 			border: 4px solid $color-magenta;
 			border-radius: 4px;
+			box-shadow: 7px 7px $color-magenta;
 
 			display: grid;
 			grid-template-columns: 60rem 50rem;
 			grid-template-rows: min-content 1fr;
-			min-height: 81rem;
+			min-height: 85rem;
 
 			&--order {
-				min-height: 70rem;
+				min-height: 75rem;
 			}
 		}
 
@@ -164,6 +162,7 @@ section.shipping {
 			grid-template-columns: max-content 30rem 1fr;
 			color: $color-mauve;
 			gap: 0.8rem 3.2rem;
+			grid-template-rows: none;
 
 			h3 {
 				margin: 0;
@@ -174,12 +173,13 @@ section.shipping {
 					grid-column: 1 / span 2;
 					display: grid;
 					column-gap: 1.5rem;
+					align-content: end;
 					grid-template-columns: max-content min-content max-content;
 				}
 
 				&__divider {
 					place-self: center;
-					height: 1.5rem;
+					height: 1.3rem;
 					border-right: 1px solid $color-mauve;
 				}
 

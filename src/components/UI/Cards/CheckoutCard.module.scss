@@ -23,7 +23,11 @@
 	}
 
 	&__image {
-		transform: scale(1.5);
+		transform: scale(1.2);
+
+		@include respond(laptop) {
+			transform: scale(1);
+		}
 	}
 
 	&__image-container {
@@ -32,7 +36,11 @@
 		place-content: center;
 		border-top: 4px solid $color-magenta-outline;
 		border-bottom: 4px solid $color-magenta-outline;
-		height: 48.5rem;
+		height: 40rem;
+
+		@include respond(laptop) {
+			height: 38rem;
+		}
 	}
 
 	&__title {

@@ -13,6 +13,10 @@ section.landing {
 			grid-template-rows: min-content 1fr min-content 1fr;
 			grid-template-columns: $grid-columns;
 			height: 100%;
+
+			@include respond(laptop) {
+				grid-template-columns: $laptop-grid-columns;
+			}
 		}
 
 		&__nav-logo {
@@ -78,6 +82,10 @@ section.knits {
 			row-gap: 2rem;
 			grid-template-columns: $grid-columns;
 			height: 100%;
+
+			@include respond(laptop) {
+				grid-template-columns: $laptop-grid-columns;
+			}
 		}
 
 		&__main,
@@ -87,6 +95,11 @@ section.knits {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
 			gap: 8rem;
+
+			@include respond(laptop) {
+				grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+				gap: 5rem
+			}
 		}
 
 		&__sub {

@@ -1,0 +1,154 @@
+@import "base.scss";
+
+section.shipping {
+	// TODO: Change this to viewport height if screen is tall enough, otherwise put padding
+	min-height: 100vh;
+	width: 100%;
+	padding: 10rem;
+	padding: 10rem 0;
+	background-color: $color-sky;
+	display: grid;
+	place-content: center;
+	line-height: 1.5;
+
+	h3,
+	h4,
+	h5 {
+		grid-column: 1 / -1;
+	}
+
+	h3 {
+		margin-bottom: 1.4rem;
+	}
+
+	h4 {
+		font-family: $font-paragraph;
+		font-weight: 700;
+		font-size: $font-size-2;
+	}
+
+	h5 {
+		font-size: 2.4rem;
+	}
+
+	.shipping {
+		&__card {
+			border: 4px solid $color-magenta;
+			border-radius: 4px;
+
+			display: grid;
+			grid-template-columns: 60rem 50rem;
+			grid-template-rows: min-content 1fr;
+		}
+
+		&__details {
+			background-color: white;
+			grid-row: 1 / -1;
+			position: relative;
+			z-index: 0;
+			padding: 2.4rem;
+			border-right: 4px solid $color-magenta;
+
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(10, min-content);
+			gap: 1.6rem;
+
+			.shipping {
+				&__first-name {
+				}
+
+				&__last-name {
+				}
+
+				&__address {
+					grid-column: 1 / span 2;
+				}
+
+				&__city {
+					grid-column: 1 / span 2;
+				}
+
+				&__state {
+				}
+
+				&__zip {
+				}
+
+				&__country {
+					grid-column: 1 / span 2;
+					margin-bottom: 2.4rem;
+				}
+
+				&__email {
+					grid-column: 1 / span 2;
+				}
+
+				&__mobile {
+					grid-column: 1 / span 2;
+					margin-bottom: 2.4rem;
+				}
+
+				&__cancel {
+					text-decoration: underline;
+					font-size: 1.8rem;
+					line-height: 1.4;
+					align-self: end;
+					font-weight: bold;
+					letter-spacing: 0.05rem;
+					cursor: pointer;
+				}
+
+				&__next-btn {
+					grid-column: 2 / span 1;
+					width: 25.5rem;
+					justify-self: end;
+				}
+			}
+		}
+
+		&__order-summary {
+			background-color: $color-linen;
+
+			display: grid;
+			grid-template-columns: min-content 1fr;
+			grid-template-rows: 8rem;
+			gap: 1.6rem;
+			align-content: start;
+
+			padding-bottom: 2rem;
+
+			.shipping {
+				&__order-header {
+					grid-column: 1 / -1;
+					grid-row: 1 / span 1;
+					border-bottom: 4px solid $color-magenta;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: 0 2.4rem;
+				}
+
+				&__close {
+					transform: scale(0.9);
+					grid-column: 2 / span 1;
+					grid-row: 1 / span 1;
+					justify-self: end;
+					cursor: pointer;
+				}
+			}
+		}
+
+		&__price {
+			background-color: $color-linen;
+			border-top: 4px solid $color-magenta;
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: space-between;
+			padding: 2rem;
+			font-size: $font-size-2;
+			font-weight: bold;
+		}
+	}
+}

@@ -1,0 +1,12 @@
+@import "base.scss";
+
+input.input {
+	outline: none;
+	border: 3px solid $color-mauve-60;
+	border-radius: 2px;
+	color: #643762;
+	padding: 1rem 1.5rem;
+	font-family: inherit;
+	font-size: $font-size-default;
+	line-height: 1.5;
+}

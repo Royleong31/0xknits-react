@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import styles from "./OrdersCard.module.scss";
 import Button from "../../UI/Buttons/Button";
 import Modal from "../Modals/Modal";
 
 export default function OrdersCard({ img, name, serial, orderNum, date, status, trackingNum, hash }) {
+	const history = useHistory();
 	const [showWallet, setShowWallet] = useState(false);
 	const isNFT = status === "NFT";
 
@@ -13,7 +16,7 @@ export default function OrdersCard({ img, name, serial, orderNum, date, status, 
 	let primaryBtn;
 	if (status === "Available for redemption") {
 		primaryBtn = (
-			<Button small className={styles["card__order-btn"]}>
+			<Button onClick={() => history.push("/redeem")} small className={styles["card__order-btn"]}>
 				Redeem
 			</Button>
 		);
@@ -28,9 +31,11 @@ export default function OrdersCard({ img, name, serial, orderNum, date, status, 
 	}
 
 	const tertiaryBtn = isNFT ? (
-		<Button tertiary small className={styles["card__item-btn"]}>
-			Copy Address
-		</Button>
+		<CopyToClipboard text={hash}>
+			<Button tertiary small className={styles["card__item-btn"]}>
+				Copy Address
+			</Button>
+		</CopyToClipboard>
 	) : (
 		<Button onClick={() => setShowWallet(true)} tertiary small className={styles["card__item-btn"]}>
 			View Item Details
@@ -42,7 +47,11 @@ export default function OrdersCard({ img, name, serial, orderNum, date, status, 
 
 	return (
 		<>
-			<Modal connectWallet={false} isModalOpen={showWallet} cancelHandler={() => setShowWallet(false)} />
+			<Modal
+				connectWallet={false}
+				isModalOpen={showWallet}
+				cancelHandler={() => setShowWallet(false)}
+			/>
 
 			<div className={styles["card"]}>
 				<div className={imgClasses.join(" ")}>
@@ -85,3 +94,4 @@ export default function OrdersCard({ img, name, serial, orderNum, date, status, 
 		</>
 	);
 }
+

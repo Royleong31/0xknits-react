@@ -26,7 +26,7 @@ export default function Home() {
 		return () => {
 			window.removeEventListener("scroll", scrollHandler);
 		};
-	}, []);
+	}, [scrollHandler]);
 
 	return (
 		<Layout footer navbar={showNavbar} page="home">

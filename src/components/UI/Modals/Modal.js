@@ -73,7 +73,7 @@ export default function Modal({ isModalOpen, cancelHandler, successHandler, conn
 					</aside>
 				) : (
 					<aside className={styles["modal"]}>
-						<KnitCardBack standAloneCard={true} {...dummyKnit} />
+						<KnitCardBack onClick={cancelHandler} standAloneCard={true} {...dummyKnit} />
 					</aside>
 				)}
 			</div>

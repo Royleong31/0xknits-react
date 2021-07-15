@@ -39,6 +39,11 @@ section.shipping {
 			display: grid;
 			grid-template-columns: 60rem 50rem;
 			grid-template-rows: min-content 1fr;
+			min-height: 81rem;
+
+			&--order {
+				min-height: 70rem;
+			}
 		}
 
 		&__details {
@@ -46,12 +51,12 @@ section.shipping {
 			grid-row: 1 / -1;
 			position: relative;
 			z-index: 0;
-			padding: 2.4rem;
+			padding: 3rem 2.5rem;
 			border-right: 4px solid $color-magenta;
 
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(10, min-content);
+			grid-template-rows: repeat(9, min-content) 1fr;
 			gap: 1.6rem;
 
 			.shipping {
@@ -102,7 +107,123 @@ section.shipping {
 				&__next-btn {
 					grid-column: 2 / span 1;
 					width: 25.5rem;
+					place-self: end;
+				}
+			}
+		}
+
+		&__title {
+			color: $color-mauve;
+			font-size: $font-size-default;
+			grid-column: 1 / span 1;
+			font-weight: 400;
+		}
+
+		&__content {
+			color: #643762;
+			grid-column: 2 / span 1;
+			font-weight: 300;
+
+			&:last-child {
+				margin-top: 2rem;
+			}
+		}
+
+		&__divider {
+			margin: 1.3rem 0;
+			grid-column: 1 / -1;
+			border: none;
+			border-top: 1px solid $color-mauve-80;
+		}
+
+		&__details--2 {
+			grid-template-columns: max-content 2fr 1fr;
+			grid-template-rows: repeat(6, min-content) 1fr;
+			gap: 0.8rem 3.2rem;
+			align-items: end;
+
+			.shipping {
+				&__edit {
+					grid-row: 2 / span 1;
+					grid-column: 3 / span 1;
 					justify-self: end;
+					cursor: pointer;
+				}
+
+				&__bottom-container {
+					grid-column: 1 / -1;
+					display: flex;
+					justify-content: space-between;
+				}
+			}
+		}
+
+		&__details--order {
+			grid-template-columns: max-content 30rem 1fr;
+			color: $color-mauve;
+			gap: 0.8rem 3.2rem;
+
+			h3 {
+				margin: 0;
+			}
+
+			.order {
+				&__sub {
+					grid-column: 1 / span 2;
+					display: grid;
+					column-gap: 1.5rem;
+					grid-template-columns: max-content min-content max-content;
+				}
+
+				&__divider {
+					place-self: center;
+					height: 1.5rem;
+					border-right: 1px solid $color-mauve;
+				}
+
+				&__num {
+					font-weight: 300;
+				}
+
+				&__date {
+					font-weight: 300;
+				}
+
+				&__tracking-container {
+					grid-column: 1 / -1;
+					display: grid;
+					row-gap: 0.8rem;
+				}
+
+				&__tracking-title {
+					font-weight: 300;
+				}
+
+				&__tracking__num {
+					font-weight: 300;
+					text-decoration: underline;
+					font-family: "Inter", $font-paragraph;
+				}
+
+				&__heading {
+					font-family: $font-paragraph;
+					color: $color-mauve;
+					grid-column: 1 / -1;
+					font-weight: 400;
+					font-size: $font-size-3;
+					align-content: center;
+					margin: 0;
+
+					&--1 {
+						font-size: $font-size-2;
+					}
+				}
+
+				&__btn {
+					grid-column: 1 / -1;
+					justify-self: start;
+					margin-top: 1.8rem;
+					align-self: end;
 				}
 			}
 		}

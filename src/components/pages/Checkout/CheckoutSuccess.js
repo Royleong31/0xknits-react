@@ -137,7 +137,7 @@ export default function CheckoutSuccess() {
 				<h3 className="checkout-success__heading">Hooray!</h3>
 				<p className="checkout-success__text">You're now the proud owner of 0xJonSnow!</p>
 
-				<Button small className="checkout-success__btn">
+				<Button small className="checkout-success__btn" onClick={() => history.push('/order-details/abcde')}>
 					See Order
 				</Button>
 				<Button

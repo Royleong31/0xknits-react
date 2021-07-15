@@ -27,34 +27,65 @@ const dummyRedeemArr = [
 export default function Shipping() {
 	const history = useHistory();
 	const [closeBtnHovered, setCloseBtnHovered] = useState(false);
+	const [enteringDetails, setEnteringDetails] = useState(true);
 
 	const backHandler = () => history.goBack();
+
+	const shippingDetails = enteringDetails ? (
+		<div className="shipping__details">
+			<h3>Shipping details</h3>
+
+			<Input name="First name" className="shipping__first-name" />
+			<Input name="Last name" className="shipping__last-name" />
+			<Input name="Address Line" className="shipping__address" />
+			<Input name="City" className="shipping__city" />
+			<Input name="State" className="shipping__state" />
+			<Input name="Zip code" type="number" className="shipping__zip" />
+			<Input name="Country/Region" className="shipping__country" />
+
+			<h4>Contact information</h4>
+			<Input name="Email Address" className="shipping__email" />
+			<Input name="Mobile Number(optional)" className="shipping__mobile" />
+
+			<p className="shipping__cancel" onClick={backHandler}>
+				Cancel
+			</p>
+			<Button small secondary className="shipping__next-btn" onClick={() => setEnteringDetails(false)}>
+				Next
+			</Button>
+		</div>
+	) : (
+		<div className="shipping__details shipping__details--2">
+			<h3>Shipping details</h3>
+			<h6 className="shipping__title">Ship to</h6>
+			<p className="shipping__content">Sheldon Cooper</p>
+			<p className="shipping__content">
+				2311 North Los Robles Avenue, Pasadena, California, United States 91001
+			</p>
+			<p className="shipping__edit" onClick={() => setEnteringDetails(true)}>
+				Edit
+			</p>
+			<hr className="shipping__divider" />
+			<h6 className="shipping__title">Email</h6>
+			<p className="shipping__content">sheldoncooper@gmail.com</p>
+			<h6 className="shipping__title">Mobile</h6>
+			<p className="shipping__content">9123 4879</p>
+
+			<div className="shipping__bottom-container">
+				<p className="shipping__cancel" onClick={backHandler}>
+					Back
+				</p>
+				<Button small className="shipping__next-btn" onClick={() => history.push("/order-details/abcdefg12345")}>
+					Place Order
+				</Button>
+			</div>
+		</div>
+	);
 
 	return (
 		<section className="shipping">
 			<div className="shipping__card">
-				<div className="shipping__details">
-					<h3>Shipping details</h3>
-					<Input name="First name" className="shipping__first-name" />
-					<Input name="Last name" className="shipping__last-name" />
-					<Input name="Address Line" className="shipping__address" />
-					<Input name="City" className="shipping__city" />
-					<Input name="State" className="shipping__state" />
-					<Input name="Zip code" type="number" className="shipping__zip" />
-					<Input name="Country/Region" className="shipping__country" />
-
-					<h4>Contact information</h4>
-					<Input name="Email Address" className="shipping__email" />
-					<Input name="Mobile Number(optional)" className="shipping__mobile" />
-
-					<p className="shipping__cancel" onClick={backHandler}>
-						Cancel
-					</p>
-					<Button small secondary className="shipping__next-btn">
-						Next
-					</Button>
-				</div>
-
+				{shippingDetails}
 				<div className="shipping__order-summary">
 					<div className="shipping__order-header">
 						<h5>Order summary</h5>

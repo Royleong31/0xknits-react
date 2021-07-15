@@ -1,12 +1,58 @@
 @import "base.scss";
 
-input.input {
+$color-input: #643762;
+
+.input {
 	outline: none;
 	border: 3px solid $color-mauve-60;
 	border-radius: 2px;
-	color: #643762;
-	padding: 1rem 1.5rem;
+	color: $color-input;
 	font-family: inherit;
-	font-size: $font-size-default;
 	line-height: 1.5;
+	margin: 1px;
+	padding: 2rem 1.5rem 0.1rem 1.5rem;
+	width: 100%;
+	font-size: 1.8rem;
+
+	&:focus {
+		border: 4px solid $color-magenta-outline;
+		margin: 0;
+	}
+
+	&__form-group {
+		position: relative;
+	}
+
+	&::placeholder {
+		color: $color-input;
+		opacity: 1;
+		font-weight: 300;
+	}
+
+	&__label {
+		color: $color-magenta;
+		transition: all 0.2s;
+		position: absolute;
+		top: 0.8rem;
+		left: 1.8rem;
+		font-weight: 300;
+
+		// display: none;
+		font-size: 1.2rem;
+		visibility: visible;
+		opacity: 1;
+	}
+
+	&:placeholder-shown {
+		padding: 1.2rem 1.5rem;
+		font-size: $font-size-default;
+	}
+
+	&:placeholder-shown + .input__label {
+		color: $color-input;
+		font-size: $font-size-default;
+		top: 1.6rem;
+		visibility: hidden;
+		opacity: 0;
+	}
 }

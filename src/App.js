@@ -6,6 +6,7 @@ import CheckoutPending from "./components/pages/Checkout/CheckoutPending";
 import CheckoutSuccess from "./components/pages/Checkout/CheckoutSuccess";
 import Shipping from "./components/pages/Redeem/Shipping";
 import Orders from "./components/pages/Orders/Orders";
+import OrderDetails from "./components/pages/Redeem/OrderDetails";
 
 // TODO: Routing between different pages
 export default function App() {
@@ -34,6 +35,10 @@ export default function App() {
 
 			<Route path="/redeem" exact>
 				<Shipping />
+			</Route>
+
+			<Route path="/order-details/:orderId">
+				<OrderDetails />
 			</Route>
 
 			<Route path="*">

@@ -24,7 +24,12 @@ export default function OrdersCard({ img, name, serial, orderNum, date, status, 
 		primaryBtn = null;
 	} else if (status === "For Delivery" || status === "Delivered") {
 		primaryBtn = (
-			<Button secondary small className={styles["card__order-btn"]}>
+			<Button
+				onClick={() => history.push("/order-details/1234")}
+				secondary
+				small
+				className={styles["card__order-btn"]}
+			>
 				Order Details
 			</Button>
 		);
@@ -94,4 +99,3 @@ export default function OrdersCard({ img, name, serial, orderNum, date, status, 
 		</>
 	);
 }
-

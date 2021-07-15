@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import ReactDOM from "react-dom";
 
 import styles from "./Modal.module.scss";
 import CSSTransition from "react-transition-group/CSSTransition";
+import WalletContext from "../../../store/wallet-context";
 
 import Button from "../../UI/Buttons/Button";
 import { KnitCardBack } from "../Cards/KnitCard";
@@ -23,9 +24,13 @@ const dummyKnit = {
 	material: "Wool",
 };
 
-export default function Modal({ isModalOpen, cancelHandler, successHandler, connectWallet = true }) {
+export default function Modal({ isModalOpen, cancelHandler, connectWallet = true }) {
 	// ?: If connectwallet == true, then show the connect wallet modal. Otherwise, show the order details
 	const [isHovered, setIsHovered] = useState(false);
+	const walletCtx = useContext(WalletContext);
+
+	const successHandler = () => walletCtx.connectedWallet();
+	const walletCancelHandler = () => walletCtx.disconnectWallet();
 
 	const modal = (
 		<CSSTransition
@@ -41,7 +46,7 @@ export default function Modal({ isModalOpen, cancelHandler, successHandler, conn
 			}}
 		>
 			<div className={styles["modal__container"]}>
-				<div className={styles["modal__overlay"]} onClick={cancelHandler} />
+				<div className={styles["modal__overlay"]} onClick={walletCancelHandler} />
 
 				{connectWallet ? (
 					<aside className={`${styles["modal"]} ${styles["modal--wallet"]}`}>
@@ -49,7 +54,7 @@ export default function Modal({ isModalOpen, cancelHandler, successHandler, conn
 							<h5 className={styles["modal__header-text"]}>Connect Wallet</h5>
 							<CloseIcon
 								className={styles["modal__close-icon"]}
-								onClick={cancelHandler}
+								onClick={walletCancelHandler}
 								onMouseEnter={() => setIsHovered(true)}
 								onMouseLeave={() => setIsHovered(false)}
 								hover={isHovered}

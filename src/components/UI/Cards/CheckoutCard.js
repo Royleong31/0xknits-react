@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
-
 import styles from "./CheckoutCard.module.scss";
 import CloseIcon from "../../../icons/Buttons/Close";
 import Chevron from "../../../icons/Chevron";

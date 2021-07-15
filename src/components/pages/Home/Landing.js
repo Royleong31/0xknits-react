@@ -1,9 +1,12 @@
+import { useContext } from "react";
+import WalletContext from "../../../store/wallet-context";
 import { useHistory } from "react-router-dom";
 
 import Button from "../../UI/Buttons/Button";
 import Logo from "../../../icons/Logo";
 
 export default function Landing() {
+	const walletCtx = useContext(WalletContext);
 	const history = useHistory();
 
 	return (
@@ -14,7 +17,11 @@ export default function Landing() {
 						<Logo className="landing__nav-logo" />
 					</div> */}
 
-					<Button navbar className="landing__connect-btn">
+					<Button
+						navbar
+						className="landing__connect-btn"
+						onClick={() => walletCtx.connectingWallet()}
+					>
 						Connect Wallet
 					</Button>
 					<Button

@@ -1,4 +1,8 @@
+import { useContext } from "react";
+
 import { Route, Switch, Redirect } from "react-router-dom";
+
+import WalletContext, { Connection } from "./store/wallet-context";
 
 import FAQ from "./components/pages/FAQ/FAQ";
 import Home from "./components/pages/Home/Home";
@@ -7,43 +11,52 @@ import CheckoutSuccess from "./components/pages/Checkout/CheckoutSuccess";
 import Shipping from "./components/pages/Redeem/Shipping";
 import Orders from "./components/pages/Orders/Orders";
 import OrderDetails from "./components/pages/Redeem/OrderDetails";
+import Modal from "./components/UI/Modals/Modal";
 
-// TODO: Routing between different pages
 export default function App() {
+	const walletCtx = useContext(WalletContext);
 	// TODO: Fallback
 	return (
-		<Switch>
-			<Route path="/" exact>
-				<Home />
-			</Route>
+		<>
+			<Modal
+				isModalOpen={walletCtx.connectionStatus === Connection.connecting}
+				cancelHandler={() => walletCtx.disconnectWallet()}
+				successHandler={() => walletCtx.connectedWallet()}
+			/>
 
-			<Route path="/faq" exact>
-				<FAQ />
-			</Route>
+			<Switch>
+				<Route path="/" exact>
+					<Home />
+				</Route>
 
-			<Route path="/checkout" exact>
-				<CheckoutPending />
-			</Route>
+				<Route path="/faq" exact>
+					<FAQ />
+				</Route>
 
-			<Route path="/checkout/success" exact>
-				<CheckoutSuccess />
-			</Route>
+				<Route path="/checkout" exact>
+					<CheckoutPending />
+				</Route>
 
-			<Route path="/orders" exact>
-				<Orders />
-			</Route>
+				<Route path="/checkout/success" exact>
+					<CheckoutSuccess />
+				</Route>
 
-			<Route path="/redeem" exact>
-				<Shipping />
-			</Route>
+				<Route path="/orders" exact>
+					<Orders />
+				</Route>
 
-			<Route path="/order-details/:orderId">
-				<OrderDetails />
-			</Route>
+				<Route path="/redeem" exact>
+					<Shipping />
+				</Route>
 
-			<Route path="*">
-				<Home />
-			</Route>
-		</Switch>
+				<Route path="/order-details/:orderId">
+					<OrderDetails />
+				</Route>
+
+				<Route path="*">
+					<Home />
+				</Route>
+			</Switch>
+		</>
 	);
 }

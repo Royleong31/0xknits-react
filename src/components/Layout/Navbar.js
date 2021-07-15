@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
+import { useContext } from "react";
+import WalletContext from "../../store/wallet-context";
 
 import Logo from "../../icons/Logo";
 import Button from "../UI/Buttons/Button";
@@ -8,6 +9,7 @@ import "./Layout.scss";
 
 export default function Navbar() {
 	const history = useHistory();
+	const walletCtx = useContext(WalletContext);
 
 	return (
 		<nav className="navbar">
@@ -16,7 +18,7 @@ export default function Navbar() {
 					<Logo className="navbar__nav-logo" />
 				</Link>
 
-				<Button navbar className="navbar__connect-btn">
+				<Button navbar className="navbar__connect-btn" onClick={() => walletCtx.connectingWallet()}>
 					Connect Wallet
 				</Button>
 

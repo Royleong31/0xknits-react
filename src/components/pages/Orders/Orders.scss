@@ -8,6 +8,10 @@ section.orders {
 	grid-template-columns: repeat(8, [col-start] minmax(min-content, 20rem) [col-end]);
 	padding: 8rem 0;
 
+	@include respond(laptop) {
+		row-gap: 4rem;
+	}
+
 	.orders {
 		&__header-container {
 			grid-column: 1 / -1;

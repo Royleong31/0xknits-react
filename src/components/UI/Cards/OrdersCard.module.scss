@@ -9,6 +9,14 @@
 	display: grid;
 	grid-template-columns: 278px 1fr; // ?: 286px - 2*4px border
 
+	@include respond(laptop) {
+		grid-column: col-start 1 / col-end 7;
+	}
+
+	@include respond(tab-land) {
+		grid-column: col-start 1 / col-end 8;
+	}
+
 	&__img {
 		transform: scale(0.8);
 	}
@@ -55,6 +63,11 @@
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: repeat(4, min-content);
 		row-gap: 1.5rem;
+		column-gap: 5rem;
+
+		@include respond(laptop) {
+			font-size: $font-size-1;
+		}
 
 		h3 {
 			grid-column: 1 / -1;
@@ -75,6 +88,7 @@
 
 				h6 {
 					font-size: inherit;
+					margin-right: 1.5rem;
 				}
 			}
 

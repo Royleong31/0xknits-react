@@ -74,7 +74,7 @@ export default function KnitCard({
 	};
 
 	return (
-		<div>
+		<div className={styles['card__wrapper']}>
 			<div
 				className={cardClasses}
 				onMouseEnter={() => setIsHovered(true)}

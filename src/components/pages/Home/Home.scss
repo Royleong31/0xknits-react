@@ -88,7 +88,6 @@ section.knits {
 			}
 		}
 
-		&__main,
 		&__cards-container {
 			grid-column: center-start / center-end;
 
@@ -98,8 +97,23 @@ section.knits {
 
 			@include respond(laptop) {
 				grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-				gap: 5rem
+				gap: 5rem;
 			}
+
+			@include respond(tab-land) {
+				grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+				justify-content: space-between;
+				gap: 10rem;
+				justify-items: space-between;
+			}
+
+			@include respond(tab-port) {
+				// gap: 10rem;
+			}
+		}
+
+		&__main {
+			grid-column: 1 / -1;
 		}
 
 		&__sub {

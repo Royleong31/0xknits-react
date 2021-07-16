@@ -49,6 +49,14 @@
 		left: 0;
 	}
 
+	@include respond(tab-land) {
+		&__wrapper {
+			// max-width: 58rem;
+			min-width: 52rem;
+			margin: auto;
+		}
+	}
+
 	&__front,
 	&__back {
 		position: absolute;

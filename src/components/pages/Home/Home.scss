@@ -92,12 +92,12 @@ section.knits {
 			grid-column: center-start / center-end;
 
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
 			gap: 8rem;
 
 			@include respond(laptop) {
 				grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-				gap: 5rem;
+				gap: 4.9rem;
 			}
 
 			@include respond(tab-land) {

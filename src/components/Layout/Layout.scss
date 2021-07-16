@@ -79,10 +79,6 @@ footer.footer {
 			grid-template-columns: $grid-columns;
 			align-items: center;
 			gap: 1.7rem 0;
-
-			@include respond(laptop) {
-				gap: 1rem 0;
-			}
 		}
 
 		&__logo {

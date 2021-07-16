@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 import "./Layout.scss";
 import Logo from "../../icons/Logo";
@@ -36,16 +37,16 @@ export default function Footer() {
 					<a href="https://twitter.com/0xknits?lang=en">
 						<TwitterIcon
 							hover={isTwitterHovered}
-							onMouseEnter={() => setIsTwitterHovered(true)}
-							onMouseLeave={() => setIsTwitterHovered(false)}
+							onMouseEnter={isMobile ? () => {} : () => setIsTwitterHovered(true)}
+							onMouseLeave={isMobile ? () => {} : () => setIsTwitterHovered(false)}
 							className="footer__icon"
 						/>
 					</a>
 					<a href="https://www.instagram.com/">
 						<InstagramIcon
 							hover={isInstagramHovered}
-							onMouseEnter={() => setIsInstagramHovered(true)}
-							onMouseLeave={() => setIsInstagramHovered(false)}
+							onMouseEnter={isMobile ? () => {} : () => setIsInstagramHovered(true)}
+							onMouseLeave={isMobile ? () => {} : () => setIsInstagramHovered(false)}
 							className="footer__icon footer__icon--2"
 						/>
 					</a>

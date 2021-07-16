@@ -1,5 +1,15 @@
-export default function Chevron({ up, down, className, reference, onClick, hover, onMouseEnter, onMouseLeave }) {
-	if ((up && down) || (!up && !down)) throw new Error("Chevron: Choose either up or down chevron");
+export default function Chevron({
+	up,
+	down,
+	className,
+	reference,
+	onClick,
+	hover,
+	onMouseEnter,
+	onMouseLeave,
+}) {
+	if (up && down) throw new Error("Chevron: Choose either up or down chevron");
+	if (!up && !down) down= true; // set down as the default direction
 
 	if (up)
 		return (

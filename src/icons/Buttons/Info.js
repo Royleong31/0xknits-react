@@ -1,5 +1,4 @@
-export default function Info({ hover, className }) {
-
+export default function Info({ hover, className, onClick }) {
 	if (hover)
 		return (
 			<svg
@@ -7,6 +6,7 @@ export default function Info({ hover, className }) {
 				height="40"
 				viewBox="0 0 40 40"
 				fill="none"
+				onClick={onClick}
 				xmlns="http://www.w3.org/2000/svg"
 			>
 				<path
@@ -27,6 +27,7 @@ export default function Info({ hover, className }) {
 			height="40"
 			viewBox="0 0 40 40"
 			fill="none"
+			onClick={onClick}
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<path

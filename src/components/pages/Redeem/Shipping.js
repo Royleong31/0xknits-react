@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
+import { isMobile } from "react-device-detect";
 import "./Redeem.scss";
 import Input from "../../UI/Input/Input";
 import Button from "../../UI/Buttons/Button";
@@ -75,7 +76,11 @@ export default function Shipping() {
 				<p className="shipping__cancel" onClick={backHandler}>
 					Back
 				</p>
-				<Button small className="shipping__next-btn" onClick={() => history.push("/order-details/abcdefg12345")}>
+				<Button
+					small
+					className="shipping__next-btn"
+					onClick={() => history.push("/order-details/abcdefg12345")}
+				>
 					Place Order
 				</Button>
 			</div>
@@ -93,8 +98,8 @@ export default function Shipping() {
 							className="shipping__close"
 							onClick={backHandler}
 							hover={closeBtnHovered}
-							onMouseEnter={() => setCloseBtnHovered(true)}
-							onMouseLeave={() => setCloseBtnHovered(false)}
+							onMouseEnter={isMobile ? () => {} : () => setCloseBtnHovered(true)}
+							onMouseLeave={isMobile ? () => {} : () => setCloseBtnHovered(false)}
 						/>
 					</div>
 					{dummyRedeemArr.map((item, i) => (

@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import ReactDOM from "react-dom";
+import { isMobile } from "react-device-detect";
 
 import styles from "./Modal.module.scss";
 import CSSTransition from "react-transition-group/CSSTransition";
@@ -54,8 +55,8 @@ export default function Modal({ isModalOpen, cancelHandler, connectWallet = true
 							<CloseIcon
 								className={styles["modal__close-icon"]}
 								onClick={walletCancelHandler}
-								onMouseEnter={() => setIsHovered(true)}
-								onMouseLeave={() => setIsHovered(false)}
+								onMouseEnter={isMobile ? () => {} : () => setIsHovered(true)}
+								onMouseLeave={isMobile ? () => {} : () => setIsHovered(false)}
 								hover={isHovered}
 							/>
 						</div>

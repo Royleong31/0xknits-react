@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./CheckoutCard.module.scss";
 import CloseIcon from "../../../icons/Buttons/Close";
+import { isMobile } from "react-device-detect";
 import Chevron from "../../../icons/Chevron";
 
 export default function CheckoutCard({ img, name, pool, initial, priceInEth, className }) {
@@ -62,12 +63,12 @@ function DropdownMenu({ optionsArr }) {
 			<div
 				className={styles["menu__default"]}
 				onClick={() => setOpen(!open)}
-				onMouseEnter={() => setIsHovered(true)}
-				onMouseLeave={() => setIsHovered(false)}
+				onMouseEnter={isMobile ? () => {} : () => setIsHovered(true)}
+				onMouseLeave={isMobile ? () => {} : () => setIsHovered(false)}
 			>
 				<p className={styles["menu__default-option"]}>{selectedOption}</p>
 
-				<Chevron hover={isHovered} className={styles["menu__chevron"]} down />
+				<Chevron hover={isHovered} className={styles["menu__chevron"]} up={open} />
 			</div>
 			<div className={styles["menu__options"]}>
 				{optionsArr.map(option => (

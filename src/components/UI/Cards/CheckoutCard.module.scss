@@ -79,8 +79,10 @@
 		justify-content: space-between;
 		cursor: pointer;
 
-		&:hover .menu__chevron {
-			background-color: $color-magenta;
+		@media (hover: hover) {
+			&:hover .menu__chevron {
+				background-color: $color-magenta;
+			}
 		}
 	}
 
@@ -120,9 +122,11 @@
 
 		cursor: pointer;
 
-		&:hover {
-			background-color: $color-magenta;
-			color: white;
+		@media (hover: hover) {
+			&:hover {
+				background-color: $color-magenta;
+				color: white;
+			}
 		}
 	}
 }

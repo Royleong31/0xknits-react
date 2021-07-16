@@ -1,5 +1,7 @@
 import { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
+import { isMobile } from "react-device-detect";
+import { useSwipeable } from "react-swipeable";
 
 import styles from "./KnitCard.module.scss";
 import InfoIcon from "../../../icons/Buttons/Info";
@@ -15,6 +17,8 @@ import WidthIcon from "../../../icons/Secondary/Width";
 import WoolIcon from "../../../icons/Secondary/Wool";
 import Button from "../Buttons/Button";
 
+import imgTest from "../../../img/dany-front.png";
+
 export default function KnitCard({
 	name,
 	initial,
@@ -29,18 +33,49 @@ export default function KnitCard({
 	img2,
 	img3,
 	img4,
-	showBackOnly = false,
 }) {
 	const [showBack, setShowBack] = useState(false);
 	const [isHovered, setIsHovered] = useState(false);
 	const [img, setImg] = useState(img1);
 	const imgContainerRef = useRef();
 	const history = useHistory();
+	const currentImgNumRef = useRef(1);
 
-	const infoForCardBack = { name, isHovered, initial, redeemed, pool, height, weight, width, material };
+	let cardClasses = [styles["card"]];
+	if (showBack) cardClasses.push(styles["card--clicked"]);
 
-	let cardClasses = `${styles["card"]} `;
-	if (showBack) cardClasses += styles["card--clicked"];
+	const swipingHandler = direction => {
+		const isSwipingLeft = direction === "left";
+		isSwipingLeft ? currentImgNumRef.current++ : currentImgNumRef.current--;
+
+		if (currentImgNumRef.current === 0) currentImgNumRef.current = 4;
+		else if (currentImgNumRef.current === 5) currentImgNumRef.current = 1;
+
+		switch (currentImgNumRef.current) {
+			case 1:
+				setImg(img1);
+				break;
+			case 2:
+				setImg(img2);
+				break;
+			case 3:
+				setImg(img3);
+				break;
+			case 4:
+				setImg(img4);
+				break;
+
+			default:
+				setImg(img1);
+				break;
+		}
+	};
+
+	let handlers = useSwipeable({
+		onSwipedLeft: swipingHandler.bind(this, "left"),
+		onSwipedRight: swipingHandler.bind(this, "right"),
+	});
+	if (!isMobile) handlers = {};
 
 	const buyHandler = () => {
 		history.push("/checkout");
@@ -74,24 +109,29 @@ export default function KnitCard({
 	};
 
 	return (
-		<div className={styles['card__wrapper']}>
+		<div className={styles["card__wrapper"]}>
 			<div
-				className={cardClasses}
-				onMouseEnter={() => setIsHovered(true)}
-				onMouseLeave={() => setIsHovered(false)}
-				onClick={() => setShowBack(val => !val)}
+				className={cardClasses.join(" ")}
+				onMouseEnter={isMobile ? () => {} : () => setIsHovered(true)}
+				onMouseLeave={isMobile ? () => {} : () => setIsHovered(false)}
+				onClick={isMobile ? () => {} : () => setShowBack(val => !val)}
 			>
 				<div className={styles["card__front"]}>
 					<div
-						onMouseMove={mouseMoveHandler}
-						onMouseLeave={() => setImg(img1)}
+						onMouseMove={isMobile ? () => {} : mouseMoveHandler}
+						onMouseLeave={isMobile ? () => {} : () => setImg(img1)}
 						ref={imgContainerRef}
 						className={styles["card__image-container"]}
+						{...handlers}
 					>
 						<img src={img} alt="Knit Image" className={styles["card__image"]} />
 					</div>
 
-					<InfoIcon className={styles["card__btn"]} hover={isHovered} />
+					<InfoIcon
+						className={styles["card__btn"]}
+						hover={isHovered}
+						onClick={isMobile ? () => setShowBack(val => !val) : () => {}}
+					/>
 
 					<div className={styles["card__title"]}>
 						<h3 className={styles["card__name"]}>{name}</h3>
@@ -108,7 +148,12 @@ export default function KnitCard({
 				<div className={styles["card__back"]}>
 					<div className={styles["card__back-top"]}>
 						<h3 className={styles["card__name"]}>{name}</h3>
-						<CloseIcon className={styles["card__btn"]} hover={isHovered} />
+
+						<CloseIcon
+							className={styles["card__btn"]}
+							hover={isHovered}
+							onClick={isMobile ? () => setShowBack(val => !val) : () => {}}
+						/>
 
 						<div className={styles["card__info"]}>
 							<InitialIcon className={styles["card__info-icon"]} />
@@ -172,8 +217,8 @@ export function KnitCardBack({ name, initial, redeemed, pool, height, weight, wi
 					<h3 className={styles["card__name"]}>{name}</h3>
 					<CloseIcon
 						className={styles["card__btn"]}
-						onMouseEnter={() => setIsHovered(true)}
-						onMouseLeave={() => setIsHovered(false)}
+						onMouseEnter={isMobile ? () => {} : () => setIsHovered(true)}
+						onMouseLeave={isMobile ? () => {} : () => setIsHovered(false)}
 						onClick={onClick}
 						hover={isHovered}
 					/>

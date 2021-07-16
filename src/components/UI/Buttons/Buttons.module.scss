@@ -12,8 +12,6 @@ $small-width: 19.4rem;
 $mobile-height: 10.2rem;
 $mobile-width: 28.4rem;
 
-
-
 button.btn {
 	height: $large-height;
 	width: 100%;
@@ -48,9 +46,11 @@ button.btn {
 		transition: 0.3s all;
 	}
 
-	&:hover::before {
-		top: 0;
-		left: 0;
+	@media (hover: hover) {
+		&:hover::before {
+			top: 0;
+			left: 0;
+		}
 	}
 
 	&--small {

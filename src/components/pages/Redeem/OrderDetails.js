@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
-import "./Redeem.scss";
 
 import "./Redeem.scss";
 import Input from "../../UI/Input/Input";
@@ -79,8 +79,8 @@ export default function OrderDetails() {
 							className="shipping__close"
 							onClick={() => history.push("/orders")}
 							hover={closeBtnHovered}
-							onMouseEnter={() => setCloseBtnHovered(true)}
-							onMouseLeave={() => setCloseBtnHovered(false)}
+							onMouseEnter={isMobile ? () => {} : () => setCloseBtnHovered(true)}
+							onMouseLeave={isMobile ? () => {} : () => setCloseBtnHovered(false)}
 						/>
 					</div>
 					{dummyRedeemArr.map((item, i) => (

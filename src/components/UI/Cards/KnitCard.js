@@ -17,8 +17,6 @@ import WidthIcon from "../../../icons/Secondary/Width";
 import WoolIcon from "../../../icons/Secondary/Wool";
 import Button from "../Buttons/Button";
 
-import imgTest from "../../../img/dany-front.png";
-
 export default function KnitCard({
 	name,
 	initial,
@@ -43,6 +41,7 @@ export default function KnitCard({
 
 	let cardClasses = [styles["card"]];
 	if (showBack) cardClasses.push(styles["card--clicked"]);
+	if (!isMobile) cardClasses.push(styles["card--not-mobile"]);
 
 	const swipingHandler = direction => {
 		const isSwipingLeft = direction === "left";
@@ -74,6 +73,8 @@ export default function KnitCard({
 	let handlers = useSwipeable({
 		onSwipedLeft: swipingHandler.bind(this, "left"),
 		onSwipedRight: swipingHandler.bind(this, "right"),
+		preventDefaultTouchmoveEvent: true,
+		delta: 5,
 	});
 	if (!isMobile) handlers = {};
 
@@ -145,6 +146,7 @@ export default function KnitCard({
 						<p className={styles["card__USD"]}>${priceInEth * 2100} USD</p>
 					</div>
 				</div>
+
 				<div className={styles["card__back"]}>
 					<div className={styles["card__back-top"]}>
 						<h3 className={styles["card__name"]}>{name}</h3>
@@ -210,8 +212,11 @@ export default function KnitCard({
 export function KnitCardBack({ name, initial, redeemed, pool, height, weight, width, material, onClick }) {
 	const [isHovered, setIsHovered] = useState(false);
 
+	let cardClasses = [styles["card"], styles["card--modal"]];
+	if (!isMobile) cardClasses.push(styles["card--not-mobile"]);
+
 	return (
-		<div className={`${styles["card"]} ${styles["card--modal"]}`}>
+		<div className={cardClasses.join(" ")}>
 			<div className={styles["card__back"]}>
 				<div className={styles["card__back-top"]}>
 					<h3 className={styles["card__name"]}>{name}</h3>

@@ -30,7 +30,12 @@
 
 	&__img-container {
 		background-color: $color-mauve-80;
-		border: 15px solid transparent;
+		border: 15px solid;
+		border-style: solid;
+
+		&:not(&--NFT) {
+			border-color: transparent;
+		}
 
 		&--NFT {
 			border-image: $NFT-gradient;

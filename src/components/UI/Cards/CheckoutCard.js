@@ -54,15 +54,18 @@ function DropdownMenu({ optionsArr }) {
 	const [selectedOption, setSelectedOption] = useState(optionsArr[0]);
 	const [isHovered, setIsHovered] = useState(false);
 
+	const menuDefaultClasses = [styles["menu__default"]];
+	if (!isMobile) menuDefaultClasses.push(styles["menu__default--not-mobile"]);
+
 	const clickHandler = () => {
 		menuRef.current.classList.toggle(styles["active"]);
+		setOpen(!open);
 	};
 
 	return (
 		<div className={styles["menu"]} onClick={clickHandler} ref={menuRef}>
 			<div
-				className={styles["menu__default"]}
-				onClick={() => setOpen(!open)}
+				className={menuDefaultClasses.join(" ")}
 				onMouseEnter={isMobile ? () => {} : () => setIsHovered(true)}
 				onMouseLeave={isMobile ? () => {} : () => setIsHovered(false)}
 			>
@@ -70,6 +73,7 @@ function DropdownMenu({ optionsArr }) {
 
 				<Chevron hover={isHovered} className={styles["menu__chevron"]} up={open} />
 			</div>
+
 			<div className={styles["menu__options"]}>
 				{optionsArr.map(option => (
 					<div onClick={() => setSelectedOption(option)} className={styles["menu__option"]}>

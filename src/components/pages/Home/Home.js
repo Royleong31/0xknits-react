@@ -1,38 +1,34 @@
-import { useEffect, useState } from "react";
-
 import "./Home.scss";
 import Layout from "../../Layout/Layout";
-import Landing from "./Landing";
-import Knits from "./Knits";
+import Landing, { MobileLanding } from "./Landing";
+import Knits, { MobileKnits } from "./Knits";
+import useShowNavbar from "../../../hooks/useShowNavbar";
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 export default function Home() {
-	const [showNavbar, setShowNavbar] = useState(false);
-	const viewportHeight = window.innerHeight;
+	const { height, isMobileSized } = useWindowDimensions();
+	const showNavbar = useShowNavbar(height);
 
-	const scrollHandler = () => {
-		const y = window.scrollY;
-
-		if (y < (viewportHeight / 4) * 3) {
-			setShowNavbar(false);
-			return;
-		}
-
-		setShowNavbar(true);
-	};
-
-	useEffect(() => {
-		window.addEventListener("scroll", scrollHandler);
-
-		return () => {
-			window.removeEventListener("scroll", scrollHandler);
-		};
-	}, [scrollHandler]);
-
-	return (
-		<Layout footer navbar={showNavbar} page="home">
+	const homeBody = isMobileSized ? (
+		<>
+			<MobileLanding />
+			<MobileKnits />
+			<MobileKnits second />
+		</>
+	) : (
+		<>
 			<Landing />
 			<Knits />
 			<Knits second />
+		</>
+	);
+
+	return (
+		<Layout footer navbar={showNavbar} page="home">
+			{isMobileSized ? <MobileLanding /> : <Landing />}
+			{isMobileSized ? <MobileKnits /> : <Knits />}
+			{isMobileSized ? <MobileKnits second /> : <Knits second />}
+			{/* {homeBody} */}
 		</Layout>
 	);
 }

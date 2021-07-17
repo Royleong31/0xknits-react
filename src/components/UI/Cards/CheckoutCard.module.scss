@@ -70,6 +70,9 @@
 }
 
 .menu {
+	// ?: Height of menu needs to be set otherwise it will take up too much height in safari but no in chrome, firefox
+	height: 4rem;
+
 	&__default {
 		border: 4px solid $color-magenta-outline;
 		border-radius: 4px;
@@ -80,7 +83,7 @@
 		cursor: pointer;
 
 		@media (hover: hover) {
-			&:hover .menu__chevron {
+			&--not-mobile:hover .menu__chevron {
 				background-color: $color-magenta;
 			}
 		}
@@ -107,8 +110,19 @@
 
 		overflow: hidden;
 		max-height: 0;
+		border-top: 4px solid $color-magenta-outline;
+		border-radius: 0;
 
-		transition: max-height 0.3s;
+		transform: translateY(-4px);
+		transition: max-height 0.3s, visibility 0.2s;
+		visibility: hidden;
+	}
+
+	&.active {
+		.menu__options {
+			max-height: 30rem; // ?: Can be increased if needed, currently can fit 7 options
+			visibility: visible;
+		}
 	}
 
 	&__option {
@@ -127,22 +141,6 @@
 				background-color: $color-magenta;
 				color: white;
 			}
-		}
-	}
-}
-
-.menu.active {
-	.menu {
-		&__default {
-			border-radius: 4px 4px 0 0;
-		}
-
-		&__options {
-			max-height: 20rem;
-		}
-
-		&__option:first-child {
-			border-radius: 0;
 		}
 	}
 }

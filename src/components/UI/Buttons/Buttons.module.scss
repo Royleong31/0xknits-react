@@ -47,7 +47,7 @@ button.btn {
 	}
 
 	@media (hover: hover) {
-		&:hover::before {
+		&--not-mobile:hover::before {
 			top: 0;
 			left: 0;
 		}

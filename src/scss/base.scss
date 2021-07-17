@@ -34,13 +34,13 @@
 	}
 
 	@if $breakpoint == tab-port {
-		@media only screen and (max-width: 1080px) {
+		@media only screen and (max-width: 950px) {
 			@content;
 		}
 	}
 
 	@if $breakpoint == tab-land {
-		@media (max-width: 1250px) {
+		@media (max-width: 1250px) and (min-width: 950px) {
 			@content;
 		}
 	}
@@ -129,6 +129,14 @@ html {
 
 	@include respond(tab-land) {
 		font-size: 45%;
+	}
+
+	@include respond(tab-port) {
+		font-size: 40%;
+	}
+
+	@include respond(phone) {
+		font-size: 37.5%;
 	}
 }
 

@@ -32,7 +32,6 @@
 	&__chevron-down {
 		margin-left: 1rem;
 		transform: scale(1.2);
-		width: 32px;
 		transition: transform 0.5s ease;
 	}
 
@@ -59,7 +58,7 @@
 		border-radius: 0 0 4px 4px;
 		border: 4px solid $color-magenta-outline;
 		border-top: none;
-		max-height: 20rem;
+		max-height: 50rem; // ?: Can be increased in case the accordion needs to be larger
 		visibility: visible;
 
 		p {

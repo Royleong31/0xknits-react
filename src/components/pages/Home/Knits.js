@@ -77,3 +77,26 @@ export default function Knits({ second }) {
 		</section>
 	);
 }
+
+export function MobileKnits({ second }) {
+	const knitsClasses = ["knits", "knits--mobile"];
+	if (second) knitsClasses.push("knits--second");
+
+	return (
+		<section className={knitsClasses.join(" ")}>
+			<div className="knits__container--mobile">
+				<h2 className="knits__main--mobile">Ice and Fire</h2>
+				<p className="knits__sub--mobile">
+					About this collection. Baggu espresso boutique premium, global discerning sophisticated
+					first-class. Finest smart St Moritz wardrobe alluring.{" "}
+				</p>
+
+				<div className="knits__cards-container--mobile">
+					{dummyKnitsArr.map((knit, i) => (
+						<KnitCard key={i} {...knit} />
+					))}
+				</div>
+			</div>
+		</section>
+	);
+}

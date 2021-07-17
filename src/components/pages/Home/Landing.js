@@ -53,7 +53,12 @@ export function MobileLanding() {
 				<div className="landing__nav-container--mobile">
 					<Logo className="landing__nav-logo--mobile" />
 
-					<div className="landing__nav-btn--mobile">
+					<div
+						className="landing__nav-btn--mobile"
+						onClick={() => {
+							console.log("open navbar");
+						}}
+					>
 						<span />
 					</div>
 				</div>

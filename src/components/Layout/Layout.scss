@@ -43,6 +43,15 @@ nav.navbar {
 			@include respond(laptop) {
 				padding: 2rem 0;
 			}
+
+			&--mobile {
+				grid-column: 1/ -1;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin: 0 0.5rem;
+				padding: 1.5rem;
+			}
 		}
 
 		&__nav-logo {
@@ -50,6 +59,50 @@ nav.navbar {
 			margin-right: auto;
 			width: 18.7rem;
 			height: 6.4rem;
+
+			&--mobile {
+				width: 21.6rem;
+				height: 7.3rem;
+			}
+		}
+
+		&__nav-btn--mobile {
+			width: 5.8rem;
+			height: 5.8rem;
+			border: 3px solid $color-magenta;
+			border-radius: 50%;
+			position: relative;
+			cursor: pointer;
+
+			span {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 2.4rem;
+				height: 0.5rem;
+				background-color: $color-magenta;
+				border-radius: 4px;
+
+				&::before,
+				&::after {
+					content: "";
+					display: block;
+					background-color: $color-magenta;
+					width: 2.4rem;
+					height: 0.5rem;
+					border-radius: 4px;
+					position: absolute;
+				}
+
+				&::before {
+					top: -0.83rem;
+				}
+
+				&::after {
+					top: 0.83rem;
+				}
+			}
 		}
 
 		&__connect-btn {
@@ -71,6 +124,10 @@ footer.footer {
 		padding: 5rem 0;
 	}
 
+	@include respond(phone) {
+		padding: 10rem 2rem;
+	}
+
 	.footer {
 		&__container {
 			grid-column: center-start / center-end;
@@ -79,6 +136,14 @@ footer.footer {
 			grid-template-columns: $grid-columns;
 			align-items: center;
 			gap: 1.7rem 0;
+
+			@include respond(phone) {
+				grid-template-columns: 1fr;
+				text-align: center;
+				grid-column: 1 / -1;
+				padding: 0 2rem;
+				justify-items: center;
+			}
 		}
 
 		&__logo {
@@ -86,12 +151,20 @@ footer.footer {
 			grid-row: 1 / -1;
 			width: 26rem;
 			height: 8.8rem;
+
+			@include respond(phone) {
+				order: 1;
+			}
 		}
 
 		&__heading {
 			grid-column: col-start 3 / col-end 6;
 			font-size: 1.8rem;
 			line-height: 1.4;
+
+			@include respond(phone) {
+				font-size: 3rem;
+			}
 		}
 
 		&__content {
@@ -99,6 +172,14 @@ footer.footer {
 			margin-right: 4rem;
 			line-height: 1.5;
 			font-size: 2rem;
+
+			@include respond(phone) {
+				font-size: 3.33rem;
+			}
+
+			@include respond(phone) {
+				margin-right: 0;
+			}
 		}
 
 		&__faq {
@@ -111,6 +192,11 @@ footer.footer {
 			@include respond(laptop) {
 				margin-left: 5rem;
 			}
+
+			@include respond(phone) {
+				margin-top: 8.3rem;
+				margin-bottom: 2rem;
+			}
 		}
 
 		&__icon-container {
@@ -121,6 +207,10 @@ footer.footer {
 			@include respond(laptop) {
 				margin-left: 5rem;
 			}
+
+			@include respond(phone) {
+				margin-bottom: 10rem;
+			}
 		}
 
 		&__icon {
@@ -128,6 +218,22 @@ footer.footer {
 
 			&--2 {
 				margin-left: 2.4rem;
+			}
+
+			@include respond(phone) {
+				width: 40px;
+				height: 40px;
+			}
+		}
+
+		@include respond(phone) {
+			&__logo,
+			&__heading,
+			&__content,
+			&__faq,
+			&__icon-container {
+				grid-column: 1 / -1;
+				grid-row: auto;
 			}
 		}
 	}

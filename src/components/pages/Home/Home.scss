@@ -63,6 +63,7 @@ section.landing {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
+				margin: 0 0.5rem;
 			}
 		}
 
@@ -176,8 +177,6 @@ section.knits {
 			}
 		}
 
-		$sliding-card-gap: 25px;
-
 		&__cards-container {
 			grid-column: center-start / center-end;
 			margin-top: 5rem;
@@ -191,7 +190,7 @@ section.knits {
 				grid-column: 1 / -1;
 				display: grid;
 				grid-template-columns: 1.5rem repeat(3, 270px) 1.5rem;
-				grid-template-rows: 600px;
+				grid-template-rows: 530px;
 				align-items: center;
 				gap: 4.5rem;
 				overflow-x: scroll;

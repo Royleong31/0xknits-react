@@ -15,7 +15,7 @@ export default function Layout({ navbar, footer, page, children }) {
 		<main className={mainClasses.join(" ")}>
 			{navbar && <Navbar />}
 			{children}
-			{/* {footer && <Footer />} */}
+			{footer && <Footer />}
 		</main>
 	);
 }

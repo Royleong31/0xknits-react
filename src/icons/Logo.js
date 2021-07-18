@@ -1,12 +1,15 @@
-export default function Logo({ className, isNavLogo, onClick }) {
+export default function Logo({ small, className, isNavLogo, onClick }) {
 	let color = "#FD247B";
 	let width = "220";
 	let height = "75";
 
-	if (isNavLogo) {
-		color = "#FFFFFF";
+	if (small) {
 		width = "130";
 		height = "44";
+	}
+
+	if (isNavLogo) {
+		color = "#FFFFFF";
 	}
 
 	return (

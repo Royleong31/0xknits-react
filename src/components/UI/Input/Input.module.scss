@@ -10,9 +10,10 @@ $color-input: #643762;
 	font-family: inherit;
 	line-height: 1.5;
 	margin: 1px;
-	padding: 2rem 1.5rem 0.1rem 1.5rem;
+	// padding: 2rem 1.5rem 0.1rem 1.5rem;
+	padding: 20px 15px 1px 15px;
 	width: 100%;
-	font-size: 1.8rem;
+	font-size: 18px;
 
 	&:focus {
 		border: 4px solid $color-magenta-outline;
@@ -33,25 +34,25 @@ $color-input: #643762;
 		color: $color-magenta;
 		transition: all 0.2s;
 		position: absolute;
-		top: 0.8rem;
-		left: 1.8rem;
+		top: 8px;
+		left: 18px;
 		font-weight: 300;
 
 		// display: none;
-		font-size: 1.2rem;
+		font-size: 12px;
 		visibility: visible;
 		opacity: 1;
 	}
 
 	&:placeholder-shown {
-		padding: 1.2rem 1.5rem;
-		font-size: $font-size-default;
+		padding: 12px 15px;
+		font-size: 16px;
 	}
 
 	&:placeholder-shown + .input__label {
 		color: $color-input;
-		font-size: $font-size-default;
-		top: 1.6rem;
+		font-size: 16px;
+		top: 16px;
 		visibility: hidden;
 		opacity: 0;
 	}

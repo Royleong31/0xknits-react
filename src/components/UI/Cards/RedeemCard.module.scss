@@ -29,6 +29,10 @@
 
 		border-radius: 4px;
 
+		@include respond(tab-port) {
+			margin: 0 2.5rem;
+		}
+
 		&:not(&--NFT) {
 			.card__img-border--outer {
 				border-color: transparent;
@@ -55,6 +59,10 @@
 
 	&__order-detail-group {
 		width: 25rem;
+
+		@include respond(tab-port) {
+			width: 35rem;
+		}
 	}
 
 	&__order-detail {
@@ -62,9 +70,20 @@
 		font-weight: 300;
 		margin-top: 0.2rem;
 		word-wrap: break-word;
+		line-height: 1.2;
+		// display: none;
+
+		@include respond(tab-port) {
+			margin-top: 1rem;
+			font-size: 2.5rem;
+		}
 	}
 
 	&__order-name {
 		font-size: $font-size-2;
+
+		@include respond(tab-port) {
+			font-size: 3.5rem;
+		}
 	}
 }

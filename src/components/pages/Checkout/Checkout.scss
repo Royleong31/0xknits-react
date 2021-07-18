@@ -91,6 +91,10 @@ section.checkout-success {
 			text-align: center;
 			row-gap: 2rem;
 			border: 4px solid $color-magenta-outline;
+
+			@include respond(tab-port) {
+				height: 60rem;
+			}
 		}
 
 		&__img-container {

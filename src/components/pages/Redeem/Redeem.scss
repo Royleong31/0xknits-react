@@ -201,7 +201,7 @@ section.shipping {
 					font-weight: 300;
 				}
 
-				&__tracking__num {
+				&__tracking-num {
 					font-weight: 300;
 					text-decoration: underline;
 					font-family: "Inter", $font-paragraph;
@@ -272,6 +272,176 @@ section.shipping {
 			padding: 2rem;
 			font-size: $font-size-2;
 			font-weight: bold;
+		}
+	}
+}
+
+section.shipping--mobile {
+	background-color: white;
+	position: relative;
+	z-index: 0;
+
+	h4,
+	h5 {
+		font-size: 3.5rem;
+	}
+
+	h5 {
+		font-family: $font-paragraph;
+		font-weight: bold;
+		margin-top: 2.5rem;
+	}
+
+	.shipping {
+		&__logo {
+			margin: 1rem 2rem;
+			cursor: pointer;
+		}
+
+		&__dropdown {
+			background-color: $color-linen;
+		}
+
+		&__chevron {
+			transform: translate(0);
+			transition: all 0.3s;
+
+			&.active {
+				transform: rotate(180deg);
+			}
+		}
+
+		&__dropdown-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 2rem 2.5rem;
+			border-top: 2px solid $color-magenta;
+			border-bottom: 2px solid $color-magenta;
+		}
+
+		&__dropdown-body {
+			display: grid;
+			grid-template-columns: min-content 1fr;
+			row-gap: 4rem;
+			transition: all 0.3s;
+			max-height: 0;
+			overflow: hidden;
+
+			&.active {
+				max-height: 100rem;
+			}
+
+			&::before {
+				content: "";
+				grid-column: 1 / -1;
+			}
+		}
+
+		&__details--mobile {
+			display: grid;
+			padding: 5.3rem 2.5rem 10rem;
+			row-gap: 2.5rem;
+			color: $color-mauve;
+			line-height: 1.5;
+
+			&-2 {
+				font-size: 16px;
+				row-gap: 0.5rem;
+
+				h6 {
+					font-size: inherit;
+					margin-top: 3rem;
+				}
+
+				.shipping {
+					&__content {
+						width: 80%;
+					}
+
+					&__divider {
+						border: none;
+						border-top: 1px solid $color-mauve-80;
+						margin: 4rem 0;
+					}
+
+					&__next-btn {
+						margin: 4rem 0;
+					}
+
+					&__cancel {
+						text-align: center;
+						font-size: 3rem;
+						font-weight: bold;
+						color: $color-magenta;
+						text-decoration: underline;
+					}
+
+					&__info {
+						font-weight: bold;
+						font-size: 3.5rem;
+						line-height: 1.5;
+					}
+				}
+				.order {
+					&__sub {
+						margin-top: 3rem;
+					}
+
+					&__heading {
+						font-family: $font-paragraph;
+						font-size: 4.5rem;
+						font-weight: bold;
+						color: $color-mauve;
+						line-height: 1.5;
+					}
+
+					&__tracking-container {
+						font-size: 16px;
+						margin-top: 1rem;
+
+						.order__tracking-num {
+							font-weight: 300;
+							text-decoration: underline;
+							font-family: "Inter", $font-paragraph;
+						}
+					}
+				}
+			}
+		}
+
+		&__title-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.shipping__edit {
+				color: $color-magenta;
+				text-decoration: underline;
+			}
+		}
+
+		&__next-btn--mobile {
+			margin-top: 2.5rem;
+		}
+
+		&__cancel--mobile {
+			justify-self: center;
+			text-decoration: underline;
+			font-size: 3rem;
+			margin-top: 2.5rem;
+		}
+
+		&__price--mobile {
+			display: flex;
+			justify-content: space-between;
+			grid-column: 1 / -1;
+			font-size: 16px;
+
+			font-weight: bold;
+			padding: 2.5rem;
+			border-top: 2px solid $color-magenta;
+			border-bottom: 2px solid $color-magenta;
 		}
 	}
 }

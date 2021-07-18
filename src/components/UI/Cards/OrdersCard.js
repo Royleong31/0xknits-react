@@ -73,9 +73,11 @@ export default function OrdersCard({ img, name, serial, orderNum, date, status, 
 				/>
 
 				<div className={styles["card--mobile"]}>
-					<div className={imgClasses.join(" ")}>
-						<div className={styles["card__img-border--mobile"]}>
-							<img src={img} alt="Knit Image" className={styles["card__img--mobile"]} />
+					<div className={styles["card__img-wrapper--mobile"]}>
+						<div className={imgClasses.join(" ")}>
+							<div className={styles["card__img-border--mobile"]}>
+								<img src={img} alt="Knit Image" className={styles["card__img--mobile"]} />
+							</div>
 						</div>
 					</div>
 

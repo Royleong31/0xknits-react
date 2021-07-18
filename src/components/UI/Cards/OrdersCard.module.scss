@@ -128,18 +128,20 @@
 .card {
 	&--mobile {
 		width: 50rem;
-		// border: 4px solid $color-magenta;
 		border-radius: 4px;
-
+		margin: auto;
 		transition: all 0s;
-		// border-bottom: none;
+	}
+
+	&__img-wrapper--mobile {
+		border: 4px solid $color-magenta !important;
+		border-radius: 4px 4px 0 0;
 	}
 
 	&__img-container--mobile {
 		display: grid;
 		place-content: center;
 		height: 42rem;
-		border: 4px solid $color-magenta !important;
 		// height: 248px;
 		// width: 248px;
 	}
@@ -195,6 +197,8 @@
 			display: grid;
 			row-gap: 1.8rem;
 			padding: 3rem 2.5rem 5rem;
+			grid-template-columns: 43.4rem;
+			overflow-wrap: break-word;
 		}
 
 		.card__detail--mobile {

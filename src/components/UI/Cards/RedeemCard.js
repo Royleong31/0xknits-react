@@ -1,6 +1,6 @@
 import styles from "./RedeemCard.module.scss";
 
-export default function RedeemCard({ img, NFT = false, name, hash, serial, quantity }) {
+export default function RedeemCard({ img, NFT = false, name, hash, serial, quantity, mobile }) {
 	let classes = styles["card__img-container"];
 	if (NFT) classes += " " + styles["card__img-container--NFT"];
 
@@ -24,3 +24,5 @@ export default function RedeemCard({ img, NFT = false, name, hash, serial, quant
 		</>
 	);
 }
+
+

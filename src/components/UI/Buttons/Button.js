@@ -10,10 +10,13 @@ export default function PrimaryBtn({
 	secondary,
 	tertiary,
 	onClick,
+	fullWidth,
 }) {
 	const classesArr = [styles["btn"]];
 
 	if (!isMobile) classesArr.push(styles["btn--not-mobile"]);
+	if (fullWidth) classesArr.push(styles["btn--full-width"]);
+
 	// ?: large is the default size
 	if (small) classesArr.push(styles["btn--small"]);
 	else if (mobile) classesArr.push(styles["btn--mobile"]);

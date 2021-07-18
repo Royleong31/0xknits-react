@@ -147,3 +147,8 @@ body {
 	color: $color-magenta;
 	-webkit-tap-highlight-color: transparent;
 }
+
+.stop-scrolling {
+	height: 100%;
+	overflow: hidden;
+}

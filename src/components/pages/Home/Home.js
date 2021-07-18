@@ -25,10 +25,7 @@ export default function Home() {
 
 	return (
 		<Layout footer navbar={showNavbar} page="home">
-			{isMobileSized ? <MobileLanding /> : <Landing />}
-			{isMobileSized ? <MobileKnits /> : <Knits />}
-			{isMobileSized ? <MobileKnits second /> : <Knits second />}
-			{/* {homeBody} */}
+			{homeBody}
 		</Layout>
 	);
 }

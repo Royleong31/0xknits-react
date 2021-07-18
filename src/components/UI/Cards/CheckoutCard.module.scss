@@ -28,6 +28,10 @@
 		@include respond(laptop) {
 			transform: scale(1);
 		}
+
+		@include respond(phone) {
+			transform: scale(0.75);
+		}
 	}
 
 	&__image-container {
@@ -111,7 +115,7 @@
 		overflow: hidden;
 		max-height: 0;
 		border-top: 4px solid $color-magenta-outline;
-		border-radius: 0;
+		border-radius: 0 0 4px 4px;
 
 		transform: translateY(-4px);
 		transition: max-height 0.3s, visibility 0.2s;
@@ -135,6 +139,10 @@
 		border-top: none;
 
 		cursor: pointer;
+
+		&:last-child {
+			border-radius: 0 0 4px 4px;
+		}
 
 		@media (hover: hover) {
 			&:hover {

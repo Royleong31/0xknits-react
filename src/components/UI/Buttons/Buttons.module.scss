@@ -64,8 +64,8 @@ button.btn {
 	}
 
 	&--navbar {
-		width: 25.5rem;
-		height: 6.4rem;
+		width: 255px;
+		height: 64px;
 		font-size: $font-size-1;
 	}
 
@@ -86,5 +86,9 @@ button.btn {
 	&--tertiary {
 		background-color: white;
 		color: $color-magenta;
+	}
+
+	&--full-width {
+		width: 100%;
 	}
 }

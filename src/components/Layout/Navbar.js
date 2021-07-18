@@ -2,6 +2,7 @@ import { useHistory, Link } from "react-router-dom";
 import { useContext } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import WalletContext from "../../store/wallet-context";
+import NavbarContext from "../../store/navbarContext";
 
 import Logo from "../../icons/Logo";
 import Button from "../UI/Buttons/Button";
@@ -12,17 +13,21 @@ export default function Navbar() {
 	const history = useHistory();
 	const { isMobileSized } = useWindowDimensions();
 	const walletCtx = useContext(WalletContext);
+	const { closeNavbar, openNavbar } = useContext(NavbarContext);
+
+	const goHomeHandler = () => {
+		closeNavbar();
+		history.push("/");
+	};
 
 	// TODO: Change to phone sized only
 	if (isMobileSized)
 		return (
 			<nav className="navbar">
 				<div className="navbar__container--mobile">
-					<Link className="navbar__nav-logo--mobile" to="/">
-						<Logo className="navbar__nav-logo--mobile" />
-					</Link>
+					<Logo className="navbar__nav-logo--mobile" onClick={goHomeHandler} />
 
-					<div className="navbar__nav-btn--mobile">
+					<div className="navbar__nav-btn--mobile" onClick={openNavbar}>
 						<span />
 					</div>
 				</div>

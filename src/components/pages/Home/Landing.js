@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import WalletContext from "../../../store/wallet-context";
 import { useHistory } from "react-router-dom";
+import NavbarContext from "../../../store/navbarContext";
 import LandingImage from "../../../icons/LandingImage";
 
 import Button from "../../UI/Buttons/Button";
@@ -47,18 +48,15 @@ export default function Landing() {
 }
 
 export function MobileLanding() {
+	const { openNavbar } = useContext(NavbarContext);
+
 	return (
 		<section className="landing">
 			<div className="landing__container--mobile">
 				<div className="landing__nav-container--mobile">
 					<Logo className="landing__nav-logo--mobile" />
 
-					<div
-						className="landing__nav-btn--mobile"
-						onClick={() => {
-							console.log("open navbar");
-						}}
-					>
+					<div className="landing__nav-btn--mobile" onClick={openNavbar}>
 						<span />
 					</div>
 				</div>

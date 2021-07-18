@@ -50,7 +50,7 @@ export default function NavbarModal() {
 		<aside className={styles["modal"]}>
 			<div className={styles["modal__nav-container"]}>
 				<Logo isNavLogo className={styles["modal__nav-logo"]} onClick={goHomeHandler} />
-				<CloseIcon isNavLogo className={styles["modal__close"]} onClick={closeNavbar} />
+				<CloseIcon isNavLogo className={styles["modal__nav-close"]} onClick={closeNavbar} />
 			</div>
 
 			<div className={styles["modal__btn-container"]}>

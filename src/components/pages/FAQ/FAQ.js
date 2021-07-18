@@ -1,3 +1,4 @@
+import useWindowDimensions from "../../../hooks/useWindowDimensions";
 import Layout from "../../Layout/Layout";
 import Accordion from "../../UI/Accordions/Accordion";
 import "./FAQ.scss";
@@ -19,6 +20,7 @@ const dummyFAQArr = [
 ];
 
 export default function FAQ() {
+
 	const style = {
 		gridTemplateRows: `repeat(${dummyFAQArr.length}, min-content)`,
 	};

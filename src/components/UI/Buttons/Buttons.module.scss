@@ -61,6 +61,11 @@ button.btn {
 		height: 5.6rem;
 
 		font-size: $font-size-1;
+
+		@include respond(tab-port) {
+			height: 55px;
+			font-size: 20px;
+		}
 	}
 
 	&--navbar {

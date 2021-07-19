@@ -16,6 +16,7 @@ export default function useWindowDimensions() {
 	}, []);
 
 	const isMobileSized = windowDimensions.width < 950;
+	const isPhoneSized = windowDimensions.width < 650;
 
-	return { ...windowDimensions, isMobileSized };
+	return { ...windowDimensions, isMobileSized, isPhoneSized };
 }

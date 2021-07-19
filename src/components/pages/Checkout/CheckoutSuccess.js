@@ -11,13 +11,13 @@ import SuccessIcon3 from "../../../icons/Display/SuccessIcon3";
 
 export default function CheckoutSuccess() {
 	const history = useHistory();
-	const { isMobileSized } = useWindowDimensions();
+	const { isPhoneSized } = useWindowDimensions();
 	// ?: Only display the success icons if the screen is large enough, otherwise, it will overflow
 
 	return (
 		<section className="checkout-success">
 			<div className="checkout-success__card">
-				{!isMobileSized && (
+				{!isPhoneSized && (
 					<>
 						<SuccessIcon1 className="checkout-success__logo checkout-success__logo--1" />
 						<SuccessIcon2 className="checkout-success__logo checkout-success__logo--2" />

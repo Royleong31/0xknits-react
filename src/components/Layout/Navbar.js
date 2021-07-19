@@ -11,7 +11,7 @@ import "./Layout.scss";
 
 export default function Navbar() {
 	const history = useHistory();
-	const { isMobileSized } = useWindowDimensions();
+	const { isPhoneSized } = useWindowDimensions();
 	const walletCtx = useContext(WalletContext);
 	const { closeNavbar, openNavbar } = useContext(NavbarContext);
 
@@ -21,7 +21,7 @@ export default function Navbar() {
 	};
 
 	// TODO: Change to phone sized only
-	if (isMobileSized)
+	if (isPhoneSized)
 		return (
 			<nav className="navbar">
 				<div className="navbar__container--mobile">

@@ -54,7 +54,7 @@
 	@include respond(tab-land) {
 		&__wrapper {
 			// TODO: REMOVE THIS
-			min-width: 52rem;
+			min-width: 48rem;
 			margin-left: auto;
 
 			&:nth-child(2n) {
@@ -108,7 +108,7 @@
 					transform: none;
 				}
 
-				@include respond(phone) {
+				@include respond(tab-port) {
 					transform: scale(0.8);
 				}
 			}
@@ -120,7 +120,8 @@
 				margin: 2.4rem;
 
 				@include respond(laptop) {
-					margin: 1.5rem;
+					width: 4.5rem;
+					height: 4.5rem;
 				}
 
 				@include respond(phone) {
@@ -168,9 +169,6 @@
 		color: $color-mauve;
 		transform: rotateY(180deg);
 
-		// TODO: REMOVE!!
-		// z-index: 2;
-
 		display: grid;
 		grid-template-rows: min-content 1fr;
 
@@ -206,7 +204,7 @@
 			padding-bottom: 1.84rem;
 
 			@include respond(laptop) {
-				grid-template-rows: min-content min-content;
+				grid-template-rows: 13rem min-content;
 			}
 
 			@include respond(phone) {
@@ -227,10 +225,15 @@
 					margin: 2.4rem;
 					cursor: pointer;
 
+					@include respond(laptop) {
+						width: 4.5rem;
+						height: 4.5rem;
+					}
+
 					@include respond(phone) {
 						width: 4.5rem;
 						height: 4.5rem;
-						margin: 1.5rem;
+						// margin: 1.5rem;
 					}
 				}
 
@@ -238,6 +241,11 @@
 					width: 10rem;
 					height: 10rem;
 					margin-bottom: 0.5rem;
+
+					@include respond(laptop) {
+						width: 9rem;
+						height: 9rem;
+					}
 
 					@include respond(phone) {
 						width: 8.5rem;
@@ -284,7 +292,7 @@
 					column-gap: 2rem;
 
 					@include respond(laptop) {
-						// column-gap: 0.5rem;
+						column-gap: 1.2rem;
 					}
 
 					&-icon {

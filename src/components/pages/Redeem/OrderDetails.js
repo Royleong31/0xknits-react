@@ -130,7 +130,7 @@ export function MobileOrderDetails() {
 				</div>
 			</div>
 
-			<div className="shipping__details--mobile shipping__details--mobile-2">
+			<div className="shipping__details--mobile shipping__details--mobile-2 order">
 				<h4>Order Details</h4>
 
 				<div className="order__sub">

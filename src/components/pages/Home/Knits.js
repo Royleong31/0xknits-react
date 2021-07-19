@@ -98,36 +98,7 @@ const dummyKnitsArr = [
 		img3: dany3,
 		img4: dany4,
 	},
-	{
-		name: "0xTyrion",
-		initial: 49,
-		redeemed: 29,
-		pool: 20,
-		priceInEth: 20,
-		height: 30,
-		weight: 200,
-		width: 50,
-		material: "Wool",
-		img1: jon1,
-		img2: dany2,
-		img3: dany3,
-		img4: dany4,
-	},
-	{
-		name: "0xJon",
-		initial: 40,
-		redeemed: 20,
-		pool: 20,
-		priceInEth: 10,
-		height: 100,
-		weight: 300,
-		width: 100,
-		material: "Wool",
-		img1: tyrion1,
-		img2: dany2,
-		img3: dany3,
-		img4: dany4,
-	},
+
 ];
 
 export default function Knits({ second }) {

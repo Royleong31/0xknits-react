@@ -76,7 +76,15 @@ button.btn {
 		@media (min-width: 950px) and (max-width: 1700px) {
 			width: 204px;
 			height: 51.2px;
-			font-size: $font-size-1;
+			// font-size: $font-size-1;
+			font-size: 16px;
+		}
+
+		@media (min-width: 651px) and (max-width: 950px) {
+			width: 153px;
+			height: 38.4px;
+			// font-size: $font-size-1;
+			font-size: 12px;
 		}
 	}
 

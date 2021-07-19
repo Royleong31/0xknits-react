@@ -6,12 +6,12 @@ import useShowNavbar from "../../../hooks/useShowNavbar";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 
 export default function Home() {
-	const { height, isMobileSized } = useWindowDimensions();
+	const { height, isMobileSized, isPhoneSized } = useWindowDimensions();
 	const showNavbar = useShowNavbar(height);
 
 	const homeBody = isMobileSized ? (
 		<>
-			<MobileLanding />
+			{isPhoneSized ? <MobileLanding /> : <Landing />}
 			<MobileKnits />
 			<MobileKnits second />
 		</>

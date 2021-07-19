@@ -30,7 +30,7 @@ export default function App() {
 				successHandler={() => walletCtx.connectedWallet()}
 			/>
 
-			{navbarCtx.navbarOpen && <NavbarModal />}
+		<NavbarModal isModalOpen={navbarCtx.navbarOpen} />
 
 			<Switch>
 				<Route path="/" exact>

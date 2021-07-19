@@ -1,5 +1,27 @@
 @import "base.scss";
 
+.modalAnimation-enter {
+	opacity: 0;
+	transform: translateY(-100vh);
+}
+
+.modalAnimation-enter-active {
+	transition: all 0.4s ease-in-out;
+	opacity: 1;
+	transform: translateY(-0vh);
+}
+
+.modalAnimation-exit {
+	opacity: 1;
+	transform: translateY(0vh);
+}
+
+.modalAnimation-exit-active {
+	opacity: 0;
+	transition: all 0.4s ease-in-out;
+	transform: translateY(-100vh);
+}
+
 .modal {
 	position: fixed;
 	top: 0;
@@ -10,10 +32,13 @@
 	background-color: $color-mauve-80;
 	padding: 3rem 2.5rem;
 
+	// transform: translateY(0vh);
+
 	display: grid;
 	grid-template-rows: 1fr min-content 1fr;
 
-	&__nav-logo, &__nav-close {
+	&__nav-logo,
+	&__nav-close {
 		cursor: pointer;
 	}
 
@@ -37,5 +62,17 @@
 
 	&::after {
 		content: "";
+	}
+
+	.navbar {
+		&__connect-btn {
+			max-width: 400px;
+			margin: auto;
+		}
+
+		&__knits-btn {
+			max-width: 400px;
+			margin: auto;
+		}
 	}
 }

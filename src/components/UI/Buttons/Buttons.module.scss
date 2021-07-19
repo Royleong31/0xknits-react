@@ -71,7 +71,13 @@ button.btn {
 	&--navbar {
 		width: 255px;
 		height: 64px;
-		font-size: $font-size-1;
+		font-size: 21.3px;
+
+		@media (min-width: 950px) and (max-width: 1700px) {
+			width: 204px;
+			height: 51.2px;
+			font-size: $font-size-1;
+		}
 	}
 
 	&--mobile {

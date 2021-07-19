@@ -55,7 +55,11 @@
 		&__wrapper {
 			// TODO: REMOVE THIS
 			min-width: 52rem;
-			margin: auto;
+			margin-left: auto;
+
+			&:nth-child(2n) {
+				margin-right: auto;
+			}
 		}
 	}
 
@@ -98,7 +102,7 @@
 
 			&__image {
 				// ?: For some reason, setting the width and height prevents the image from showing up on samsung internet browser but not on chrome or firefox
-				transform: scale(0.5);
+				transform: scale(1.5);
 
 				@include respond(laptop) {
 					transform: none;

@@ -120,7 +120,7 @@ export default function Shipping() {
 
 export function MobileShipping() {
 	const history = useHistory();
-	const [enteringDetails, setEnteringDetails] = useState(false);
+	const [enteringDetails, setEnteringDetails] = useState(true);
 	const dropdownBodyRef = useRef();
 	const chevronRef = useRef();
 

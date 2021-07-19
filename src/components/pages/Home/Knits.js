@@ -53,6 +53,81 @@ const dummyKnitsArr = [
 		img3: dany3,
 		img4: dany4,
 	},
+	{
+		name: "0xDaenerys",
+		initial: 20,
+		redeemed: 2,
+		pool: 18,
+		priceInEth: 30,
+		height: 20,
+		weight: 100,
+		width: 5,
+		material: "Wool",
+		img1: dany1,
+		img2: dany2,
+		img3: dany3,
+		img4: dany4,
+	},
+	{
+		name: "0xTyrion",
+		initial: 49,
+		redeemed: 29,
+		pool: 20,
+		priceInEth: 20,
+		height: 30,
+		weight: 200,
+		width: 50,
+		material: "Wool",
+		img1: jon1,
+		img2: dany2,
+		img3: dany3,
+		img4: dany4,
+	},
+	{
+		name: "0xJon",
+		initial: 40,
+		redeemed: 20,
+		pool: 20,
+		priceInEth: 10,
+		height: 100,
+		weight: 300,
+		width: 100,
+		material: "Wool",
+		img1: tyrion1,
+		img2: dany2,
+		img3: dany3,
+		img4: dany4,
+	},
+	{
+		name: "0xTyrion",
+		initial: 49,
+		redeemed: 29,
+		pool: 20,
+		priceInEth: 20,
+		height: 30,
+		weight: 200,
+		width: 50,
+		material: "Wool",
+		img1: jon1,
+		img2: dany2,
+		img3: dany3,
+		img4: dany4,
+	},
+	{
+		name: "0xJon",
+		initial: 40,
+		redeemed: 20,
+		pool: 20,
+		priceInEth: 10,
+		height: 100,
+		weight: 300,
+		width: 100,
+		material: "Wool",
+		img1: tyrion1,
+		img2: dany2,
+		img3: dany3,
+		img4: dany4,
+	},
 ];
 
 export default function Knits({ second }) {
@@ -82,16 +157,20 @@ export function MobileKnits({ second }) {
 	const knitsClasses = ["knits", "knits--mobile"];
 	if (second) knitsClasses.push("knits--second");
 
+	const style = {
+		gridTemplateColumns: `1.5rem repeat(${dummyKnitsArr.length}, 270px) 1.5rem`,
+	};
+
 	return (
 		<section className={knitsClasses.join(" ")}>
 			<div className="knits__container--mobile">
 				<h2 className="knits__main--mobile">Ice and Fire</h2>
 				<p className="knits__sub--mobile">
 					About this collection. Baggu espresso boutique premium, global discerning sophisticated
-					first-class. Finest smart St Moritz wardrobe alluring.{" "}
+					first-class. Finest smart St Moritz wardrobe alluring.
 				</p>
 
-				<div className="knits__cards-container--mobile">
+				<div className="knits__cards-container--mobile" style={style}>
 					{dummyKnitsArr.map((knit, i) => (
 						<KnitCard key={i} {...knit} />
 					))}

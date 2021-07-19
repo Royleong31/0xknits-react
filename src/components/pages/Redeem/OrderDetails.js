@@ -100,7 +100,6 @@ export default function OrderDetails() {
 
 export function MobileOrderDetails() {
 	const history = useHistory();
-	const [enteringDetails, setEnteringDetails] = useState(false);
 	const dropdownBodyRef = useRef();
 	const chevronRef = useRef();
 

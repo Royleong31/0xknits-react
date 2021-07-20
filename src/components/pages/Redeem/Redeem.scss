@@ -442,10 +442,6 @@ section.shipping--mobile {
 		&__next-btn--mobile {
 			margin-top: 2.5rem;
 			order: 1;
-
-			@include respond(phone) {
-				order: 0;
-			}
 		}
 
 		&__cancel--mobile {
@@ -454,6 +450,20 @@ section.shipping--mobile {
 			font-size: 3rem;
 			margin-top: 2.5rem;
 			align-self: end;
+		}
+
+		@include respond(tab-port) {
+			&__next-btn--mobile,
+			&__cancel--mobile {
+				grid-column: auto;
+			}
+		}
+
+		@include respond(phone) {
+			&__next-btn--mobile,
+			&__cancel--mobile {
+				grid-column: 1 / -1;
+			}
 		}
 
 		&__price--mobile {
@@ -469,7 +479,19 @@ section.shipping--mobile {
 		}
 	}
 
-	.order * {
-		grid-column: 1 / -1;
+	.order {
+		* {
+			grid-column: 1 / -1;
+		}
+
+		.shipping__next-btn--mobile {
+			@include respond(tab-port) {
+				grid-column: 1 / span 1;
+			}
+
+			@include respond(phone) {
+				grid-column: 1 / -1;
+			}
+		}
 	}
 }

@@ -8,7 +8,11 @@
 	perspective: 160rem;
 
 	@include respond(laptop) {
-		height: 65rem;
+		height: 63rem;
+	}
+
+	@include respond(tab-land) {
+		// height: 55rem;
 	}
 
 	&--clicked {

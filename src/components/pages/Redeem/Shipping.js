@@ -180,18 +180,16 @@ export function MobileShipping() {
 			<h6 className="shipping__title">Mobile</h6>
 			<p className="shipping__content">9123 4879</p>
 
-			<div className="shipping__bottom-container">
-				<Button
-					small
-					className="shipping__next-btn"
-					onClick={() => history.push("/order-details/abcdefg12345")}
-				>
-					Place Order
-				</Button>
-				<p className="shipping__cancel" onClick={backHandler}>
-					Back
-				</p>
-			</div>
+			<Button
+				small
+				className="shipping__next-btn--mobile"
+				onClick={() => history.push("/order-details/abcdefg12345")}
+			>
+				Place Order
+			</Button>
+			<p className="shipping__cancel--mobile" onClick={backHandler}>
+				Back
+			</p>
 		</div>
 	);
 

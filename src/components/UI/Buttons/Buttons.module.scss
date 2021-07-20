@@ -55,16 +55,13 @@ button.btn {
 
 	&--small {
 		// width: $small-width;
-		// height: $small-height;
-
-		// ?: For laptop size (14/16 of actual)
-		height: 5.6rem;
+		height: $small-height;
 
 		font-size: $font-size-1;
 
 		@include respond(tab-port) {
-			height: 55px;
-			font-size: 20px;
+			height: 45px;
+			font-size: 16px !important;
 		}
 	}
 
@@ -80,11 +77,11 @@ button.btn {
 			font-size: 16px;
 		}
 
-		@media (min-width: 651px) and (max-width: 950px) {
+		@media (min-width: 650px) and (max-width: 950px) {
 			width: 153px;
 			height: 38.4px;
 			// font-size: $font-size-1;
-			font-size: 12px;
+			font-size: 13px;
 		}
 	}
 

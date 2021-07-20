@@ -159,16 +159,14 @@ export function MobileOrderDetails() {
 				<h6 className="shipping__title">Mobile</h6>
 				<p className="shipping__content">9123 4879</p>
 
-				<div className="shipping__bottom-container">
-					<Button
-						small
-						secondary
-						className="shipping__next-btn"
-						onClick={() => history.push("/orders")}
-					>
-						View All Orders
-					</Button>
-				</div>
+				<Button
+					small
+					secondary
+					className="shipping__next-btn--mobile"
+					onClick={() => history.push("/orders")}
+				>
+					View All Orders
+				</Button>
 			</div>
 		</section>
 	);

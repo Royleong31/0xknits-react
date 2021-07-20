@@ -61,6 +61,10 @@
 		width: 25rem;
 
 		@include respond(tab-port) {
+			width: 80%;
+		}
+
+		@include respond(phone) {
 			width: 30rem;
 		}
 	}
@@ -75,7 +79,7 @@
 		@include respond(tab-port) {
 			margin-top: 1rem;
 			font-size: 2.5rem;
-			hyphens: auto;
+			// hyphens: auto;
 		}
 	}
 

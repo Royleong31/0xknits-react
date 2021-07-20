@@ -29,7 +29,7 @@
 			transform: scale(1);
 		}
 
-		@include respond(phone) {
+		@include respond(tab-port) {
 			transform: scale(0.75);
 		}
 	}

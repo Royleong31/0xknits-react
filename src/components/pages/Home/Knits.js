@@ -111,7 +111,7 @@ export default function Knits({ second }) {
 				<h2 className="knits__main">Ice and Fire</h2>
 				<p className="knits__sub">
 					About this collection. Baggu espresso boutique premium, global discerning sophisticated
-					first-class. Finest smart St Moritz wardrobe alluring.{" "}
+					first-class. Finest smart St Moritz wardrobe alluring.
 				</p>
 
 				<div className="knits__cards-container">

@@ -11,9 +11,7 @@
 		height: 63rem;
 	}
 
-	@include respond(tab-land) {
-		// height: 55rem;
-	}
+
 
 	&--clicked {
 		.card__front {
@@ -58,7 +56,7 @@
 	@include respond(tab-land) {
 		&__wrapper {
 			// TODO: REMOVE THIS
-			min-width: 48rem;
+			width: 48rem;
 			margin-left: auto;
 
 			&:nth-child(2n) {

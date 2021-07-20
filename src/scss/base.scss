@@ -121,23 +121,28 @@ $laptop-grid-columns: [full-start] minmax(8rem, 1fr) [center-start]
 
 html {
 	box-sizing: border-box;
-	font-size: 62.5%;
+	// font-size: 62.5%;
+	font-size: 10px;
+	-webkit-text-size-adjust: none;
 
 	@include respond(laptop) {
-		font-size: 50%;
+		// font-size: 50%;
+		font-size: 8px;
 	}
 
 	@include respond(tab-land) {
-		font-size: 45%;
+		// font-size: 45%;
+		font-size: 7.2px;
 	}
 
 	@include respond(tab-port) {
-		// font-size: 40%;
-		font-size: 37.5%;
+		// font-size: 37.5%;
+		font-size: 6px;
 	}
 
 	@include respond(phone) {
-		font-size: 37.5%;
+		// font-size: 37.5%;
+		font-size: 6px;
 	}
 }
 

@@ -8,6 +8,7 @@ import InstagramIcon from "../../icons/Buttons/Instagram";
 import TwitterIcon from "../../icons/Buttons/Twitter";
 
 export default function Footer() {
+	// ?: As the hover icons and the non hovered icons are different, i used useState to manage the hover state of the icons. onMouseEnter => hover = true, onMouseLeave => hover = false
 	const [isTwitterHovered, setIsTwitterHovered] = useState(false);
 	const [isInstagramHovered, setIsInstagramHovered] = useState(false);
 
@@ -29,9 +30,9 @@ export default function Footer() {
 					K-pop exquisite iconic Singapore.
 				</p>
 
-				<Link className="footer__faq" to="/faq">
-					<h4 className="footer__heading">FAQ</h4>
-				</Link>
+					<Link className="footer__faq" to="/faq">
+						<h4 className="footer__heading">FAQ</h4>
+					</Link>
 
 				<div className="footer__icon-container">
 					<a href="https://twitter.com/0xknits?lang=en">

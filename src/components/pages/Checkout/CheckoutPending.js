@@ -13,6 +13,7 @@ const cardDetails = { img, name: "0xDaenerys", pool: 20, initial: 49, priceInEth
 
 export default function ConnectWallet() {
 	const history = useHistory();
+	// ?: Wallet connection status is stored globally as the user can edit it from the nav as well as here
 	const walletCtx = useContext(WalletContext);
 	const connectionStatus = walletCtx.connectionStatus;
 
@@ -27,7 +28,7 @@ export default function ConnectWallet() {
 			</Button>
 		);
 
-	// TODO: Closing the modal may not mean that it is connected as the request may have been rejected.
+	// TODO: Closing the modal may not mean that it is connected as the request may have been rejected. Can store the state of whether the user is connected in local storage or something
 	return (
 		<section className="checkout-pending">
 			<CheckoutCard {...cardDetails} className="checkout-pending__card" />

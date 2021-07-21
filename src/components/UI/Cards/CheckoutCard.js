@@ -55,6 +55,7 @@ function DropdownMenu({ optionsArr }) {
 	const [isHovered, setIsHovered] = useState(false);
 
 	const menuDefaultClasses = [styles["menu__default"]];
+	// ?: Only have the color changing hover effect when not in mobile as they are touch screen devices
 	if (!isMobile) menuDefaultClasses.push(styles["menu__default--not-mobile"]);
 
 	const clickHandler = () => {

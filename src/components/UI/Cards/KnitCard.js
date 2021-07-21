@@ -70,6 +70,7 @@ export default function KnitCard({
 		}
 	};
 
+	// ?: Detect swiping events on mobile
 	let handlers = useSwipeable({
 		onSwipedLeft: swipingHandler.bind(this, "left"),
 		onSwipedRight: swipingHandler.bind(this, "right"),

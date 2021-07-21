@@ -13,6 +13,8 @@ export default function Accordion({ question, answer }) {
 		chevronRef.current.classList.toggle(styles["active"]);
 	};
 
+	// !: Currently, the max-height of the accordion answer is set to 50rem, but it can be increased if needed
+
 	return (
 		<div className={styles["accordion"]}>
 			<div className={styles["accordion__qn"]} onClick={clickHandler}>

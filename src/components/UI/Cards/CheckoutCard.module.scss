@@ -66,13 +66,11 @@
 		grid-template-columns: 1fr 2fr;
 		grid-template-rows: min-content 1fr;
 		height: 11.5rem;
-	}
-
-	&__detail {
 		font-size: $font-size-default;
 	}
 }
 
+// DROPDOWN MENU
 .menu {
 	// ?: Height of menu needs to be set otherwise it will take up too much height in safari but no in chrome, firefox
 	height: 4rem;

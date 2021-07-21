@@ -83,9 +83,7 @@
 		background-color: white;
 
 		display: grid;
-		grid-template-rows: repeat(2, min-content); // ?: 34.4rem - 4px top and bottom border = 33.6rem
-		// grid-template-columns: minmax(min-content, max-content);
-		// display: none;
+		grid-template-rows: min-content; // ?: Additional rows will be added implicitly
 		z-index: 1;
 
 		.card {

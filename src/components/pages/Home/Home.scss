@@ -34,11 +34,11 @@ section.landing {
 		}
 
 		&__nav-logo {
-			margin-right: auto;
+			// margin-right: auto;
 
-			@include respond(laptop) {
-				transform: scale(0.875);
-			}
+			// @include respond(laptop) {
+			// 	transform: scale(0.875);
+			// }
 
 			&--mobile {
 				width: 21.6rem;
@@ -188,7 +188,7 @@ section.knits {
 				margin-top: 5rem;
 				grid-column: 1 / -1;
 				display: grid;
-				grid-template-columns: 1.5rem repeat(3, 270px) 1.5rem;
+				// ?: grid-template-columns are set in Knits.js as inline styles
 				grid-template-rows: 530px;
 				align-items: center;
 				gap: 4.5rem;
@@ -206,7 +206,6 @@ section.knits {
 
 				grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
 				gap: 7rem;
-				// todo: gap needs to be adjusted between 1300-1700px;
 			}
 
 			@include respond(tab-land) {

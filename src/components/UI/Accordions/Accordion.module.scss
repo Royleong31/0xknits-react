@@ -61,8 +61,6 @@
 
 	&__ans.active {
 		border-radius: 0 0 4px 4px;
-		border: 4px solid $color-magenta-outline;
-		border-top: none;
 		max-height: 50rem; // ?: Can be increased in case the accordion needs to be larger
 		visibility: visible;
 

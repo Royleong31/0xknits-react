@@ -1,7 +1,7 @@
 @import "base.scss";
 
 section.checkout-pending {
-	// TODO: Change this to viewport height if screen is tall enough, otherwise put padding
+	// ?: There will only be vertical scrolling if the screen is too short
 	min-height: 100vh;
 	width: 100%;
 	padding: 10rem 0;
@@ -44,6 +44,7 @@ section.checkout-success {
 			&--1 {
 				top: -15rem;
 				left: -22rem;
+				// ?: Gives it the appearance of popping out
 				animation: logo 0.3s cubic-bezier(1, 0, 0.11, 1.91) forwards;
 				transform: scale(0);
 
@@ -78,6 +79,7 @@ section.checkout-success {
 		&__card {
 			width: 50rem;
 			margin-top: 13.75rem; // ?: To compensate for the -ve margin in img-container
+			// margin-top: 15.7rem;
 			height: 50rem;
 			background-color: white;
 			color: $color-magenta;

@@ -38,6 +38,7 @@
 		}
 
 		&--NFT {
+			// ?: Creates the linear gradient area
 			border-image: $NFT-gradient;
 			border-image-slice: 1;
 
@@ -150,6 +151,7 @@
 		height: 35rem;
 	}
 
+	// For mobile only
 	&__dropdown-header {
 		display: flex;
 		justify-content: space-between;
@@ -174,6 +176,7 @@
 		}
 	}
 
+	// For mobile only
 	&__dropdown-body {
 		color: $color-mauve;
 		font-size: 16px;

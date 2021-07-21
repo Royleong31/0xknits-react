@@ -19,17 +19,17 @@ export default function OrdersCard({ img, name, serial, orderNum, date, status, 
 
 	const showTrackOrder = status === "For Delivery" || status === "Delivered";
 
-	let primaryBtn;
+	let btn1;
 	if (status === "Available for redemption") {
-		primaryBtn = (
+		btn1 = (
 			<Button onClick={() => history.push("/redeem")} small className={styles["card__order-btn"]}>
 				Redeem
 			</Button>
 		);
 	} else if (isNFT) {
-		primaryBtn = null;
+		btn1 = null;
 	} else if (status === "For Delivery" || status === "Delivered") {
-		primaryBtn = (
+		btn1 = (
 			<Button
 				onClick={() => history.push("/order-details/1234")}
 				secondary
@@ -41,7 +41,7 @@ export default function OrdersCard({ img, name, serial, orderNum, date, status, 
 		);
 	}
 
-	const tertiaryBtn = isNFT ? (
+	const btn2 = isNFT ? (
 		<CopyToClipboard text={hash}>
 			<Button tertiary small className={styles["card__item-btn"]}>
 				Copy Address
@@ -110,8 +110,8 @@ export default function OrdersCard({ img, name, serial, orderNum, date, status, 
 							)}
 
 							<div className={styles["card__btn-container--mobile"]}>
-								{primaryBtn}
-								{tertiaryBtn}
+								{btn1}
+								{btn2}
 							</div>
 						</div>
 					</div>
@@ -160,8 +160,8 @@ export default function OrdersCard({ img, name, serial, orderNum, date, status, 
 					</div>
 
 					<div className={styles["card__details-right"]}>
-						{primaryBtn}
-						{tertiaryBtn}
+						{btn1}
+						{btn2}
 					</div>
 				</div>
 			</div>

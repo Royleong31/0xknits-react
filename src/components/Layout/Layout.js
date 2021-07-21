@@ -5,10 +5,8 @@ import "./Layout.scss";
 export default function Layout({ navbar, footer, page, children }) {
 	let mainClasses = ["container"];
 
-	if (page === "home") {
-		mainClasses.push("container--home");
-	} else if (page === "faq" || page === "orders") {
-		mainClasses.push("container--faq");
+	if (page === "faq" || page === "orders") {
+		mainClasses.push("container--secondary");
 	}
 
 	return (
